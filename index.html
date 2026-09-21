@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripMate - Teman Perjalananmu</title>
+
+    <!-- File CSS akan kamu buat sendiri -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">TripMate</a>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinasi">Destinasi</a></li>
+                <li><a href="#paket">Paket Wisata</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Jelajahi Dunia Bersama TripMate</h1>
+
+                <p>
+                    Temukan destinasi impian, rencanakan perjalanan,
+                    dan ciptakan pengalaman tak terlupakan bersama TripMate.
+                </p>
+
+                <a href="#destinasi" class="btn">Mulai Eksplorasi</a>
+            </div>
+        </section>
+
+
+        <!-- Destinasi -->
+        <section id="destinasi" class="destinations">
+            <div class="section-title">
+                <h2>Destinasi Populer</h2>
+                <p>Beberapa tempat menarik yang bisa kamu kunjungi.</p>
+            </div>
+
+            <div class="destination-list">
+
+                <article class="destination-card">
+                    <img src="images/bali.jpg" alt="Pemandangan Bali">
+                    <div class="card-content">
+                        <h3>Bali</h3>
+                        <p>
+                            Nikmati pantai, budaya, kuliner, dan keindahan alam
+                            Pulau Dewata.
+                        </p>
+                        <a href="#">Lihat Detail</a>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/yogyakarta.jpg" alt="Pemandangan Yogyakarta">
+                    <div class="card-content">
+                        <h3>Yogyakarta</h3>
+                        <p>
+                            Jelajahi kekayaan budaya, sejarah, kuliner,
+                            dan berbagai destinasi menarik.
+                        </p>
+                        <a href="#">Lihat Detail</a>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/lombok.jpg" alt="Pemandangan Lombok">
+                    <div class="card-content">
+                        <h3>Lombok</h3>
+                        <p>
+                            Temukan pantai eksotis, pegunungan, dan
+                            pemandangan alam yang menakjubkan.
+                        </p>
+                        <a href="#">Lihat Detail</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Paket Wisata -->
+        <section id="paket" class="packages">
+
+            <div class="section-title">
+                <h2>Paket Wisata</h2>
+                <p>Pilih paket perjalanan yang sesuai dengan kebutuhanmu.</p>
+            </div>
+
+            <div class="package-list">
+
+                <article class="package-card">
+                    <h3>Liburan Hemat</h3>
+                    <p class="price">Rp1.500.000</p>
+
+                    <ul>
+                        <li>3 Hari 2 Malam</li>
+                        <li>Hotel</li>
+                        <li>Transportasi</li>
+                        <li>Tour Guide</li>
+                    </ul>
+
+                    <a href="#" class="btn">Pilih Paket</a>
+                </article>
+
+
+                <article class="package-card">
+                    <h3>Liburan Premium</h3>
+                    <p class="price">Rp3.500.000</p>
+
+                    <ul>
+                        <li>5 Hari 4 Malam</li>
+                        <li>Hotel Premium</li>
+                        <li>Transportasi</li>
+                        <li>Tour Guide</li>
+                        <li>Wisata Eksklusif</li>
+                    </ul>
+
+                    <a href="#" class="btn">Pilih Paket</a>
+                </article>
+
+
+                <article class="package-card">
+                    <h3>Adventure Trip</h3>
+                    <p class="price">Rp2.500.000</p>
+
+                    <ul>
+                        <li>4 Hari 3 Malam</li>
+                        <li>Camping</li>
+                        <li>Transportasi</li>
+                        <li>Perlengkapan Adventure</li>
+                        <li>Guide</li>
+                    </ul>
+
+                    <a href="#" class="btn">Pilih Paket</a>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Tentang Kami -->
+        <section id="tentang" class="about">
+
+            <div class="section-title">
+                <h2>Tentang TripMate</h2>
+            </div>
+
+            <div class="about-content">
+                <p>
+                    TripMate adalah platform travel yang membantu kamu menemukan
+                    berbagai destinasi wisata menarik dan merencanakan perjalanan
+                    dengan lebih mudah.
+                </p>
+
+                <p>
+                    Kami percaya bahwa setiap perjalanan memiliki cerita.
+                    Karena itu, TripMate hadir untuk menjadi teman perjalananmu
+                    dari awal hingga akhir.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Kontak -->
+        <section id="kontak" class="contact">
+
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Punya pertanyaan? Kirim pesan kepada tim TripMate.</p>
+            </div>
+
+            <form action="#" method="post">
+
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Masukkan nama kamu"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Masukkan email kamu"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="pesan">Pesan</label>
+                    <textarea
+                        id="pesan"
+                        name="pesan"
+                        rows="5"
+                        placeholder="Tulis pesan kamu..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn">
+                    Kirim Pesan
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">    
+            <h2>TripMate</h2>
+
+            <p>
+                Teman perjalananmu untuk menjelajahi dunia.
+            </p>
+
+            <div class="social-media">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">TikTok</a>
+            </div>
+
+            <p>
+                &copy; 2026 TripMate. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
