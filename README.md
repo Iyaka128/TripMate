@@ -4,17 +4,7 @@ TripMate adalah sistem web portal eksplorasi dan reservasi destinasi wisata berb
 
 ---
 
-## 1. Identitas Pengembang Sistem
-
-- Nama Pengembang: Shafi (شفیع)
-- NIM / ID Mahasiswa: 202410370110484
-- Peran: Lead Frontend Engineer & System Designer
-- Institusi: Program Studi Teknik Informatika
-- Tahun Rilis Sistem: 2026
-
----
-
-## 2. Deskripsi dan Tujuan Sistem
+## 1. Deskripsi dan Tujuan Sistem
 
 Sistem TripMate dirancang sebagai platform terintegrasi satu pintu (one-stop portal) bagi calon wisatawan untuk:
 1. Mempelajari dan memilih destinasi unggulan terverifikasi di Indonesia (Bali, Yogyakarta, Lombok).
@@ -24,7 +14,7 @@ Sistem TripMate dirancang sebagai platform terintegrasi satu pintu (one-stop por
 
 ---
 
-## 3. Arsitektur dan Alur Kerja Sistem (System Workflow)
+## 2. Arsitektur dan Alur Kerja Sistem (System Workflow)
 
 Sistem beroperasi dengan arsitektur frontend modular:
 
@@ -43,7 +33,7 @@ Sistem beroperasi dengan arsitektur frontend modular:
 
 ---
 
-## 4. Modul-Modul Fungsional Sistem
+## 3. Modul-Modul Fungsional Sistem
 
 Sistem TripMate terdiri dari 8 modul utama:
 
@@ -63,7 +53,7 @@ Sistem TripMate terdiri dari 8 modul utama:
 
 ### Modul 4: Mesin Keunggulan Bento Grid (Bento Value-Proposition Engine)
 - Komponen: section id="keunggulan".
-- Fungsi: Modul baru yang mengelompokkan 4 pilar sistem dalam tata letak kisi asimetris:
+- Fungsi: Modul yang mengelompokkan 4 pilar sistem dalam tata letak kisi asimetris:
   - Kurasi Kualitas Bintang Lima (Eksklusivitas).
   - Pemesanan Cepat 60 Detik (Seamless Workflow).
   - Transparansi Biaya 100% (No Hidden Fees).
@@ -88,9 +78,9 @@ Sistem TripMate terdiri dari 8 modul utama:
 
 ---
 
-## 5. Kontribusi dan Pembaruan Sistem oleh Shafi (NIM: 202410370110484)
+## 4. Pembaruan dan Peningkatan Sistem (System Updates & Enhancements)
 
-Shafi bertanggung jawab penuh atas perancangan ulang, refaktorisasi arsitektur, dan pengembangan fitur baru pada sistem TripMate:
+Pembaruan sistem mencakup perancangan ulang arsitektur, refaktorisasi antarmuka, dan pengembangan fitur baru pada TripMate:
 
 1. Migrasi Arsitektur ke Tailwind CSS:
    - Mengubah struktur styling konvensional menjadi utility-first framework berbasis Tailwind v3.4.
@@ -115,7 +105,7 @@ Shafi bertanggung jawab penuh atas perancangan ulang, refaktorisasi arsitektur, 
 
 ---
 
-## 6. Spesifikasi Teknologi Sistem
+## 5. Spesifikasi Teknologi Sistem
 
 - Bahasa Markup: HTML5 Semantic
 - Bahasa Gaya: CSS3, Tailwind CSS v3.4.17
@@ -125,17 +115,17 @@ Shafi bertanggung jawab penuh atas perancangan ulang, refaktorisasi arsitektur, 
 
 ---
 
-## 7. Struktur Berkas Sistem
+## 6. Struktur Berkas Sistem
 
 ```
 TripMate-main/
 |-- index.html            Struktur dokumen HTML5 dengan utilitas Tailwind CSS
-|-- script.js             Logika fungsional dan interaktivitas sistem oleh Shafi
+|-- script.js             Logika fungsional dan interaktivitas sistem
 |-- tailwind.config.js    Konfigurasi token desain Apple (warna, radius, tipografi)
 |-- input.css             Berkas sumber direktif Tailwind dan kelas utilitas kaca
 |-- style.css             Berkas CSS akhir hasil kompilasi Tailwind CLI
 |-- package.json          Konfigurasi dependensi dan perintah kompilasi sistem
-|-- README.md             Dokumentasi teknis sistem dan atribusi Shafi (202410370110484)
+|-- README.md             Dokumentasi teknis dan arsitektur sistem
 `-- images/               Direktori aset visual resolusi tinggi
     |-- hero.jpg          Latar belakang pameran utama
     |-- bali.jpg          Visual destinasi Bali
@@ -145,7 +135,7 @@ TripMate-main/
 
 ---
 
-## 8. Panduan Menjalankan dan Membangun Sistem
+## 7. Panduan Menjalankan dan Membangun Sistem
 
 ### Menjalankan Sistem
 Buka berkas index.html langsung melalui peramban web modern (Google Chrome, Mozilla Firefox, Safari, atau Microsoft Edge).
@@ -166,4 +156,4 @@ npm run build
 
 ---
 
-Hak Cipta Sistem (c) 2026 TripMate. Dikembangkan oleh Shafi (NIM: 202410370110484).
+Hak Cipta Sistem (c) 2026 TripMate. Seluruh Hak Cipta Dilindungi Undang-Undang.

@@ -1,7 +1,6 @@
 /**
  * ====================================================================
- * TripMate — Apple Interactive Experience (script.js)
- * Pengembang: Shafi (202410370110484)
+ * TripMate — Interactive Client Experience (script.js)
  * ====================================================================
  */
 
