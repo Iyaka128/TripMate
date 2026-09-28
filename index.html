@@ -18,32 +18,22 @@
 
 <body class="bg-[#fbfbfd] text-[#1d1d1f] font-sans antialiased selection:bg-blue-500/20 selection:text-[#0071e3] overflow-x-hidden">
 
-    <!-- Apple Dynamic Island Style Toast -->
+    <!-- Apple Dynamic Island Style Toast (Text-First) -->
     <div id="appleToast" class="fixed top-6 left-1/2 -translate-x-1/2 -translate-y-32 opacity-0 scale-90 z-50 flex items-center gap-3.5 bg-black text-white px-6 py-3 rounded-full border border-white/20 shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] pointer-events-none" role="alert" aria-live="polite">
-        <div class="toast-icon w-7 h-7 rounded-full bg-[#34c759] text-white flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6L9 17l-5-5"/>
-            </svg>
-        </div>
+        <span class="toast-badge text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#34c759] text-white flex-shrink-0">Sukses</span>
         <div>
             <div class="toast-title text-xs font-bold tracking-tight">Notifikasi</div>
             <div class="toast-desc text-[11px] text-white/70">Operasi berhasil dilakukan.</div>
         </div>
     </div>
 
-    <!-- Frosted Glass Navbar (Tailwind) -->
+    <!-- Frosted Glass Navbar -->
     <header class="sticky top-0 z-50 w-full apple-glass border-b border-black/[0.06] transition-all">
         <nav class="max-w-6xl mx-auto min-h-16 py-3 px-6 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
-            <!-- Brand Logo -->
+            <!-- Brand Logo (Pure Typography) -->
             <div class="w-full md:w-auto flex items-center justify-between">
-                <a href="#home" class="flex items-center gap-2.5 text-xl font-bold tracking-tight text-[#1d1d1f] group">
-                    <span class="w-9 h-9 rounded-xl bg-[#0071e3] text-white flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:rotate-12 transition-transform duration-300">
-                        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-                        </svg>
-                    </span>
-                    <span>TripMate</span>
+                <a href="#home" class="text-xl font-extrabold tracking-tight text-[#1d1d1f] hover:text-[#0071e3] transition-colors">
+                    TripMate
                 </a>
                 
                 <a href="#paket" class="inline-flex md:hidden items-center justify-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#0071e3] text-white shadow-sm">
@@ -73,15 +63,14 @@
 
     <main>
 
-        <!-- Apple Keynote Hero Section (Tailwind) -->
+        <!-- Apple Keynote Hero Section -->
         <section id="home" class="relative min-h-[85vh] flex items-center justify-center px-6 py-20 bg-[#0b0c10] overflow-hidden bg-cover bg-center" style="background-image: url('images/hero.jpg');">
             <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/65 to-black/85 backdrop-blur-[2px]"></div>
             
             <div class="relative z-10 max-w-4xl mx-auto text-center text-white flex flex-col items-center">
                 <!-- Eyebrow Pill -->
-                <div class="inline-flex items-center gap-2 apple-glass-pill border border-white/20 px-4 py-1.5 rounded-full text-xs font-semibold text-slate-100 mb-6 shadow-lg shadow-black/20">
-                    <span class="text-amber-300">✦</span>
-                    <span>Generasi Baru Pengalaman Berlibur</span>
+                <div class="inline-flex items-center apple-glass-pill border border-white/20 px-4 py-1.5 rounded-full text-xs font-semibold text-slate-100 mb-6 shadow-lg shadow-black/20">
+                    Generasi Baru Pengalaman Berlibur
                 </div>
 
                 <!-- Hero Title -->
@@ -96,13 +85,10 @@
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
-                    <a href="#destinasi" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold bg-[#0071e3] text-white hover:bg-[#0077ed] active:bg-[#0062c4] transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-0.5 group">
+                    <a href="#destinasi" class="inline-flex items-center px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold bg-[#0071e3] text-white hover:bg-[#0077ed] active:bg-[#0062c4] transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-0.5">
                         Mulai Eksplorasi
-                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
                     </a>
-                    <a href="#paket" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md transition-all hover:-translate-y-0.5">
+                    <a href="#paket" class="inline-flex items-center px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md transition-all hover:-translate-y-0.5">
                         Lihat Paket Pilihan
                     </a>
                 </div>
@@ -133,7 +119,7 @@
         </section>
 
 
-        <!-- Destinasi Populer (Tailwind Apple Cards) -->
+        <!-- Destinasi Populer -->
         <section id="destinasi" class="max-w-6xl mx-auto px-6 py-24">
             <div class="text-center max-w-2xl mx-auto mb-14">
                 <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Destinasi Pilihan</span>
@@ -148,19 +134,12 @@
                     <div class="relative h-64 overflow-hidden">
                         <img src="images/bali.jpg" alt="Pemandangan Bali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <span class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">Favorit Wisatawan</span>
-                        <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md">
-                            <svg class="w-3.5 h-3.5 text-amber-400 fill-current" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                            </svg>
-                            4.95
+                        <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
+                            Rating 4.95
                         </span>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <div class="flex items-center gap-1.5 text-xs text-[#86868b] font-medium mb-2">
-                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
+                        <div class="text-xs text-[#86868b] font-medium mb-2">
                             Bali, Indonesia
                         </div>
                         <h3 class="text-xl font-bold tracking-tight text-[#1d1d1f] mb-2">Pulau Dewata, Bali</h3>
@@ -172,11 +151,8 @@
                                 <span class="block text-[11px] text-[#86868b]">Mulai dari</span>
                                 <span class="text-base font-bold text-[#0071e3]">Rp1.850.000</span>
                             </div>
-                            <a href="#paket" class="inline-flex items-center gap-1 text-sm font-semibold text-[#0071e3] group/link hover:underline">
-                                Detail
-                                <svg class="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                                </svg>
+                            <a href="#paket" class="text-sm font-semibold text-[#0071e3] hover:underline">
+                                Lihat Detail
                             </a>
                         </div>
                     </div>
@@ -187,19 +163,12 @@
                     <div class="relative h-64 overflow-hidden">
                         <img src="images/yogyakarta.jpg" alt="Pemandangan Yogyakarta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <span class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">Heritage & Seni</span>
-                        <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md">
-                            <svg class="w-3.5 h-3.5 text-amber-400 fill-current" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                            </svg>
-                            4.91
+                        <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
+                            Rating 4.91
                         </span>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <div class="flex items-center gap-1.5 text-xs text-[#86868b] font-medium mb-2">
-                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
+                        <div class="text-xs text-[#86868b] font-medium mb-2">
                             D.I. Yogyakarta
                         </div>
                         <h3 class="text-xl font-bold tracking-tight text-[#1d1d1f] mb-2">Yogyakarta Heritage</h3>
@@ -211,11 +180,8 @@
                                 <span class="block text-[11px] text-[#86868b]">Mulai dari</span>
                                 <span class="text-base font-bold text-[#0071e3]">Rp1.450.000</span>
                             </div>
-                            <a href="#paket" class="inline-flex items-center gap-1 text-sm font-semibold text-[#0071e3] group/link hover:underline">
-                                Detail
-                                <svg class="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                                </svg>
+                            <a href="#paket" class="text-sm font-semibold text-[#0071e3] hover:underline">
+                                Lihat Detail
                             </a>
                         </div>
                     </div>
@@ -226,19 +192,12 @@
                     <div class="relative h-64 overflow-hidden">
                         <img src="images/lombok.jpg" alt="Pemandangan Lombok" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <span class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">Eksplorasi Alam</span>
-                        <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md">
-                            <svg class="w-3.5 h-3.5 text-amber-400 fill-current" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                            </svg>
-                            4.97
+                        <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
+                            Rating 4.97
                         </span>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <div class="flex items-center gap-1.5 text-xs text-[#86868b] font-medium mb-2">
-                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
+                        <div class="text-xs text-[#86868b] font-medium mb-2">
                             Lombok, NTB
                         </div>
                         <h3 class="text-xl font-bold tracking-tight text-[#1d1d1f] mb-2">Lombok & Gili Island</h3>
@@ -250,11 +209,8 @@
                                 <span class="block text-[11px] text-[#86868b]">Mulai dari</span>
                                 <span class="text-base font-bold text-[#0071e3]">Rp2.150.000</span>
                             </div>
-                            <a href="#paket" class="inline-flex items-center gap-1 text-sm font-semibold text-[#0071e3] group/link hover:underline">
-                                Detail
-                                <svg class="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                                </svg>
+                            <a href="#paket" class="text-sm font-semibold text-[#0071e3] hover:underline">
+                                Lihat Detail
                             </a>
                         </div>
                     </div>
@@ -264,7 +220,7 @@
         </section>
 
 
-        <!-- Apple Bento Grid: Keunggulan TripMate (Tailwind) -->
+        <!-- Apple Bento Grid: Keunggulan TripMate -->
         <section id="keunggulan" class="max-w-6xl mx-auto px-6 py-20">
             <div class="text-center max-w-2xl mx-auto mb-14">
                 <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Mengapa TripMate</span>
@@ -274,7 +230,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Bento 1: Large Featured Dark Card -->
-                <div class="md:col-span-2 bg-gradient-to-br from-[#1c1c1e] to-[#121214] text-white rounded-[28px] p-8 sm:p-10 border border-white/10 shadow-apple-sm relative overflow-hidden flex flex-col justify-between hover:-translate-y-1 hover:shadow-apple-card transition-all duration-300 group">
+                <div class="md:col-span-2 bg-gradient-to-br from-[#1c1c1e] to-[#121214] text-white rounded-[28px] p-8 sm:p-10 border border-white/10 shadow-apple-sm relative overflow-hidden flex flex-col justify-between hover:-translate-y-1 hover:shadow-apple-card transition-all duration-300">
                     <div>
                         <span class="inline-block bg-white/15 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">Eksklusivitas</span>
                         <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3 text-white">Kurasi Premium Tanpa Kompromi</h3>
@@ -282,10 +238,8 @@
                             Kami menginspeksi langsung setiap resor, armada transportasi, dan pemandu lokal untuk memastikan standar privasi, higienitas, dan kemewahan sejati.
                         </p>
                     </div>
-                    <div class="absolute right-6 -bottom-4 opacity-10 group-hover:opacity-20 group-hover:rotate-12 transition-all duration-500 pointer-events-none text-white">
-                        <svg class="w-32 h-32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                        </svg>
+                    <div class="mt-8 text-sm font-semibold text-white/70">
+                        Standar Kualitas Bintang Lima
                     </div>
                 </div>
 
@@ -323,7 +277,7 @@
         </section>
 
 
-        <!-- Paket Wisata (Tailwind Apple Pro Tiers) -->
+        <!-- Paket Wisata (Apple Pro Tiers) -->
         <section id="paket" class="bg-[#f5f5f7] py-24 px-6 border-y border-black/[0.04]">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Pilihan Paket</span>
@@ -348,36 +302,20 @@
                     </div>
 
                     <ul class="flex flex-col gap-3.5 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Durasi 3 Hari 2 Malam
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Hotel Nyaman Bintang 3
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Transportasi Antar-Jemput
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Tour Guide Berpengalaman
                         </li>
                     </ul>
@@ -407,44 +345,24 @@
                     </div>
 
                     <ul class="flex flex-col gap-3.5 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Durasi 5 Hari 4 Malam
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Resor & Hotel Premium Bintang 5
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Transportasi Privat & Driver Eksekutif
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Akses Wisata Eksklusif & VIP Skip-line
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Fotografer Profesional & Dokumentasi
                         </li>
                     </ul>
@@ -470,36 +388,20 @@
                     </div>
 
                     <ul class="flex flex-col gap-3.5 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Durasi 4 Hari 3 Malam
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Glamping & Safari Camping
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Transportasi 4x4 Offroad
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
-                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </span>
+                        <li class="flex items-center gap-2.5 text-sm text-[#6e6e73]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] flex-shrink-0"></span>
                             Perlengkapan Adventure & Safety Guide
                         </li>
                     </ul>
@@ -513,7 +415,7 @@
         </section>
 
 
-        <!-- Tentang Kami (Tailwind Apple Storytelling) -->
+        <!-- Tentang Kami -->
         <section id="tentang" class="max-w-4xl mx-auto px-6 py-24 text-center">
             <div class="mb-10">
                 <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Filosofi Kami</span>
@@ -551,7 +453,7 @@
         </section>
 
 
-        <!-- Kontak (Tailwind Apple Form & Info) -->
+        <!-- Kontak -->
         <section id="kontak" class="max-w-6xl mx-auto px-6 py-20">
             <div class="text-center max-w-2xl mx-auto mb-14">
                 <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Dukungan 24/7</span>
@@ -560,44 +462,24 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <!-- Sidebar Cards -->
+                <!-- Sidebar Cards (Text-First) -->
                 <div class="lg:col-span-5 flex flex-col gap-4">
-                    <div class="flex items-center gap-4 bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-apple-sm">
-                        <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-[#1d1d1f]">Email Konsultasi</h4>
-                            <p class="text-xs text-[#6e6e73]">halo@tripmate.com</p>
-                        </div>
+                    <div class="bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-apple-sm">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-[#0071e3] block mb-1">Email Resmi</span>
+                        <h4 class="text-base font-bold text-[#1d1d1f]">halo@tripmate.com</h4>
+                        <p class="text-xs text-[#6e6e73] mt-1">Konsultasi perjalanan & reservasi VIP</p>
                     </div>
 
-                    <div class="flex items-center gap-4 bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-apple-sm">
-                        <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-[#1d1d1f]">Telepon / WhatsApp</h4>
-                            <p class="text-xs text-[#6e6e73]">+62 (021) 8089-7700</p>
-                        </div>
+                    <div class="bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-apple-sm">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-[#0071e3] block mb-1">Telepon & WhatsApp</span>
+                        <h4 class="text-base font-bold text-[#1d1d1f]">+62 (021) 8089-7700</h4>
+                        <p class="text-xs text-[#6e6e73] mt-1">Layanan konsumen aktif setiap hari</p>
                     </div>
 
-                    <div class="flex items-center gap-4 bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-apple-sm">
-                        <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-[#1d1d1f]">Waktu Respon</h4>
-                            <p class="text-xs text-[#6e6e73]">Rata-rata dalam 5 menit</p>
-                        </div>
+                    <div class="bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-apple-sm">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-[#0071e3] block mb-1">Kecepatan Pelayanan</span>
+                        <h4 class="text-base font-bold text-[#1d1d1f]">Respon Dalam 5 Menit</h4>
+                        <p class="text-xs text-[#6e6e73] mt-1">Tim siaga melayani pertanyaan Anda</p>
                     </div>
                 </div>
 
@@ -641,11 +523,8 @@
                         ></textarea>
                     </div>
 
-                    <button type="submit" class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full text-sm font-semibold bg-[#0071e3] text-white hover:bg-[#0077ed] active:bg-[#0062c4] transition-all shadow-lg shadow-blue-500/25">
-                        <span>Kirim Pesan</span>
-                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
-                        </svg>
+                    <button type="submit" class="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-full text-sm font-semibold bg-[#0071e3] text-white hover:bg-[#0077ed] active:bg-[#0062c4] transition-all shadow-lg shadow-blue-500/25">
+                        Kirim Pesan
                     </button>
                 </form>
             </div>
@@ -654,19 +533,13 @@
     </main>
 
 
-    <!-- Apple Style Minimalist Footer (Tailwind) -->
+    <!-- Apple Style Minimalist Footer -->
     <footer class="bg-[#f5f5f7] border-t border-black/[0.06] pt-16 pb-12 text-[#6e6e73]">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-black/[0.06]">
                 <div class="lg:col-span-5 space-y-4">
-                    <a href="#home" class="flex items-center gap-2.5 text-lg font-bold tracking-tight text-[#1d1d1f]">
-                        <span class="w-8 h-8 rounded-lg bg-[#0071e3] text-white flex items-center justify-center">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-                            </svg>
-                        </span>
-                        <span>TripMate</span>
+                    <a href="#home" class="text-lg font-bold tracking-tight text-[#1d1d1f] hover:text-[#0071e3] transition-colors">
+                        TripMate
                     </a>
                     <p class="text-xs sm:text-sm text-[#86868b] max-w-sm leading-relaxed">
                         Teman perjalanan premium untuk menjelajahi keindahan dunia dalam presisi dan kenyamanan.
@@ -707,10 +580,12 @@
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#86868b]">
                 <p>&copy; 2026 TripMate Inc. Seluruh Hak Cipta Dilindungi Undang-Undang.</p>
 
-                <div class="flex items-center gap-5">
+                <div class="flex items-center gap-6">
+                    <a href="https://instagram.com" target="_blank" rel="noopener" class="hover:text-[#1d1d1f] transition-colors">Instagram</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener" class="hover:text-[#1d1d1f] transition-colors">Facebook</a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener" class="hover:text-[#1d1d1f] transition-colors">TikTok</a>
                     <a href="#" class="hover:text-[#1d1d1f] transition-colors">Privasi</a>
-                    <a href="#" class="hover:text-[#1d1d1f] transition-colors">Ketentuan Layanan</a>
-                    <a href="#" class="hover:text-[#1d1d1f] transition-colors">Legalitas</a>
+                    <a href="#" class="hover:text-[#1d1d1f] transition-colors">Ketentuan</a>
                 </div>
             </div>
         </div>

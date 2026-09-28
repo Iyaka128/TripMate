@@ -1,179 +1,169 @@
-# TripMate — Apple Design & Tailwind CSS Edition
+# Dokumentasi Sistem TripMate — Travel Web Portal
 
-> Proyek Landing Page Eksplorasi Wisata Premium yang dirancang dan dikembangkan dengan memadukan standar **Bahasa Desain Apple (Apple Design Language / Human Interface Guidelines)** dan framework utilitas **Tailwind CSS**.
-
----
-
-## 👨‍💻 Informasi Pengembang / Developer Identity
-
-| Keterangan | Detail |
-| :--- | :--- |
-| **Nama Pengembang** | **Shafi** (شفیع) |
-| **NIM / ID Mahasiswa** | **`202410370110484`** |
-| **Peran** | Lead Frontend Designer & Developer |
-| **Proyek** | TripMate Travel Web Portal |
-| **Teknologi** | HTML5, Tailwind CSS v3.4, Vanilla JavaScript ES6+, PostCSS |
+TripMate adalah sistem web portal eksplorasi dan reservasi destinasi wisata berbasis antarmuka modern yang memadukan prinsip Apple Design System dan framework Tailwind CSS.
 
 ---
 
-## 🚀 Ringkasan Transformasi Proyek oleh Shafi (`202410370110484`)
+## 1. Identitas Pengembang Sistem
 
-Website TripMate awalnya merupakan template web HTML/CSS statis sederhana. **Shafi (`202410370110484`)** melakukan perombakan total (*complete redesign & rebuild*) dengan menghadirkan estetika premium kelas dunia ala ekosistem Apple:
-
-```
-[Template Dasar Awal] ──► [Redesign Apple Aesthetic] ──► [Implementasi Tailwind CSS] ──► [Pengembangan script.js Interaktif]
-```
-
----
-
-## 📌 Rincian Bagian yang Diperbarui & Ditambahkan oleh Shafi
-
-Berikut adalah dokumentasi komprehensif mengenai seluruh modul, fitur, dan file yang **dibuat, diperbarui, dan ditambahkan oleh Shafi (NIM: 202410370110484)**:
-
-### 1. 🎨 Desain Sistem & Tailwind CSS (`tailwind.config.js` & `input.css`)
-- **Status**: **Baru Diciptakan & Dikonfigurasi Penuh oleh Shafi**
-- **Detail Implementasi**:
-  - Konfigurasi `tailwind.config.js` dengan palet warna resmi Apple:
-    - `apple-blue`: `#0071e3` (Warna aksen utama Apple)
-    - `apple-blue-hover`: `#0077ed`
-    - `apple-gray`: Spektrum abu-abu netral (#fbfbfd hingga #121214)
-  - Penambahan font stack resmi Apple: `-apple-system`, `SF Pro Display`, `SF Pro Text`, serta `Plus Jakarta Sans`.
-  - Aturan tracking tipografi rapat (`tracking-apple-tight`: `-0.035em`) khas presentasi produk Apple Keynote.
-  - Kompilasi otomatis dengan Tailwind CLI yang menghasilkan file produksi [`style.css`](style.css) yang bersih, teroptimasi, dan murni.
-
-### 2. 🪟 Navbar Frosted Glass (`<header>` & `<nav>`)
-- **Status**: **Diperbarui Total oleh Shafi**
-- **Detail Implementasi**:
-  - Penggunaan material transparan `apple-glass` dengan `backdrop-filter: blur(20px) saturate(180%)`.
-  - Desain logo baru: Monogram kompas modern dalam wadah bergradien dengan interaksi rotasi halus saat di-hover.
-  - **Scroll Elevation**: Navbar secara dinamis mendeteksi posisi scroll untuk menambah bayangan ambient yang presisi.
-  - **Mobile Pill Navigation**: Tampilan navigasi di layar smartphone otomatis bertransformasi menjadi *horizontal scrollable pill menu* tanpa scrollbar yang mengganggu.
-
-### 3. 🎬 Hero Section Apple Keynote (`#home`)
-- **Status**: **Diperbarui Total oleh Shafi**
-- **Detail Implementasi**:
-  - Background sinematik resolusi tinggi dengan gradien gelap presisi untuk keterbacaan kontras tinggi (*high contrast readability*).
-  - **Pill Badge**: Menambahkan elemen kustom `✦ Generasi Baru Pengalaman Berlibur` dengan efek frosted glass.
-  - **Tipografi Raksasa**: Judul *"Jelajahi Dunia Bersama TripMate."* dengan hierarki visual dramatis.
-  - **Floating Metrics Banner**: Komponen baru yang menampilkan metrik kredibilitas:
-    - `50+ Destinasi Kurasi`
-    - `12.5k Traveler Bahagia`
-    - `4.98 Rating Kepuasan`
-    - `24/7 Concierge AI & Tim`
-
-### 4. 🏝️ Koleksi Destinasi Populer (`#destinasi`)
-- **Status**: **Diperbarui oleh Shafi**
-- **Detail Implementasi**:
-  - Redesain kartu menjadi bentuk *Apple Squircle* (`rounded-[24px]`).
-  - Efek interaktif: Zoom gambar halus (`group-hover:scale-105`) dan elevasi kartu ke atas saat disentuh kursor.
-  - Penambahan pill tag kurasi (*Favorit Wisatawan*, *Heritage & Seni*, *Eksplorasi Alam*) serta pill rating bintang terintegrasi.
-  - Informasi harga awal dan tombol tautan beranimasi panah.
-
-### 5. 🍱 Apple Bento Grid Keunggulan (`#keunggulan`)
-- **Status**: **Fitur Baru Ditambahkan 100% oleh Shafi**
-- **Detail Implementasi**:
-  - Shafi merancang dan menambahkan bagian Bento Grid baru yang terinspirasi langsung dari layout showcase fitur Apple (seperti pada peluncuran iPhone Pro & chip Apple Silicon).
-  - Terdiri dari 4 kartu modular inovatif:
-    1. **Eksklusivitas (Dark Mode Bento)**: Kartu utama bergradien hitam titanium dengan ornamen grafis transparan di latar belakang.
-    2. **Pemesanan Cepat (1-Click Booking)**: Fokus pada kecepatan transaksi dalam 60 detik.
-    3. **Harga Transparan (100% Clear)**: Penekanan pada komitmen nol biaya tersembunyi.
-    4. **Concierge 24/7**: Layanan pendampingan digital dan personal tanpa henti.
-
-### 6. 💎 Paket Wisata Tiering Apple Pro (`#paket`)
-- **Status**: **Diperbarui Total oleh Shafi**
-- **Detail Implementasi**:
-  - Konsep diferensiasi produk Apple diterapkan pada paket:
-    - *Starter*: **Liburan Hemat** (Rp1.500.000)
-    - *Pro Flagship*: **Liburan Premium** (Rp3.500.000) — Ditonjolkan dengan border aksen biru Apple, badge *Paling Populer*, dan elevasi bayangan glow.
-    - *Explorer*: **Adventure Trip** (Rp2.500.000)
-  - Checklist fasilitas menggunakan ikon centang SVG presisi dengan wadah lingkaran beraksen lembut.
-
-### 7. 📖 Tentang Kami & Pilar Filosofi (`#tentang`)
-- **Status**: **Diperbarui Total oleh Shafi**
-- **Detail Implementasi**:
-  - Menghadirkan kutipan filosofis editorial ala manifesto Apple.
-  - **3 Kartu Pilar Kepercayaan**:
-    - `99.8%` Indeks Kepuasan Pelanggan
-    - `150+` Mitra Hotel & Resort Teruji
-    - `100%` Garansi Perlindungan Perjalanan
-
-### 8. ✉️ Formulir Kontak Apple Support (`#kontak`)
-- **Status**: **Diperbarui Total oleh Shafi**
-- **Detail Implementasi**:
-  - Tata letak 2 kolom: Sidebar saluran informasi (Email, WhatsApp, SLA Respon 5 Menit) dan panel formulir.
-  - Desain input rounded modern dengan efek *Apple Focus Ring* (`focus:ring-4 focus:ring-blue-500/15`).
-  - Tombol submit berkapsul dengan transisi taktil.
-
-### 9. ⚡ Fitur Interaktif JavaScript (`script.js`)
-- **Status**: **Baru Diciptakan & Diintegrasikan Penuh oleh Shafi**
-- **Detail Fitur**:
-  - **Dynamic Island Toast Notification**:
-    - Popup notifikasi mengambang di bagian atas layar dengan animasi kurva pegas (*spring curve easing* `cubic-bezier(0.34, 1.56, 0.64, 1)`).
-    - Memiliki varian icon status (Success hijau & Info biru Apple).
-  - **Active Navigation Spy**:
-    - Mendeteksi posisi scroll pengguna dan secara otomatis memberikan sorotan aktif pada menu navigasi yang bersesuaian.
-  - **Auto-Fill & Smooth Scroll Paket Wisata**:
-    - Saat pengunjung mengklik *"Pilih Paket"* pada salah satu kartu harga, halaman otomatis bergulir (*smooth scroll*) ke formulir kontak, dan kolom pesan otomatis terisi dengan nama paket yang dipilih.
-  - **Simulasi Pengiriman Formulir & Feedback Taktil**:
-    - Tombol kirim menampilkan status *loading spinner* SVG, dilanjutkan dengan reset form otomatis dan pemanggilan Dynamic Island Toast konfirmasi sukses secara personal.
-
-### 10. 📸 Integrasi Aset Gambar Berkualitas Tinggi (`images/`)
-- **Status**: **Diunduh & Dikonfigurasi oleh Shafi**
-- **Detail**:
-  - Memperbaiki tautan gambar yang awalnya kosong/rusak dengan menyediakan aset lokal beresolusi tinggi:
-    - `images/bali.jpg`: Lanskap Pura dan pesisir Bali.
-    - `images/yogyakarta.jpg`: Kemegahan Candi Borobudur / Prambanan.
-    - `images/lombok.jpg`: Keindahan pantai toska dan Gunung Rinjani.
-    - `images/hero.jpg`: Panorama fotografi perjalanan sinematik untuk latar hero banner.
+- Nama Pengembang: Shafi (شفیع)
+- NIM / ID Mahasiswa: 202410370110484
+- Peran: Lead Frontend Engineer & System Designer
+- Institusi: Program Studi Teknik Informatika
+- Tahun Rilis Sistem: 2026
 
 ---
 
-## 📁 Struktur Berkas Proyek
+## 2. Deskripsi dan Tujuan Sistem
+
+Sistem TripMate dirancang sebagai platform terintegrasi satu pintu (one-stop portal) bagi calon wisatawan untuk:
+1. Mempelajari dan memilih destinasi unggulan terverifikasi di Indonesia (Bali, Yogyakarta, Lombok).
+2. Membandingkan tingkatan paket tur wisata (Liburan Hemat, Liburan Premium, dan Adventure Trip) secara transparan.
+3. Melakukan konsultasi dan pemesanan perjalanan langsung dengan sistem pengisian pesan otomatis (auto-fill reservation).
+4. Menerima umpan balik interaktif secara langsung melalui sistem notifikasi Dynamic Island.
+
+---
+
+## 3. Arsitektur dan Alur Kerja Sistem (System Workflow)
+
+Sistem beroperasi dengan arsitektur frontend modular:
+
+1. Modul Presentasi (User Interface Layer):
+   Dibangun dengan HTML5 semantik dan utilitas Tailwind CSS yang telah dikompilasi secara optimal untuk memastikan waktu muat (load time) di bawah 1 detik.
+
+2. Modul Logika Interaktif (Client-Side Logic Layer):
+   Dijalankan oleh berkas script.js yang menangani:
+   - Pemantauan posisi gulir layar (Scroll Spy & Navbar Elevation).
+   - Pengalihan pemesanan paket wisata ke formulir kontak (Package Selection Dispatcher).
+   - Penanganan status pengiriman formulir konsultasi (Form State Handler).
+   - Manajemen antrean visual notifikasi (Dynamic Island Toast Controller).
+
+3. Modul Desain Sistem (Design System Token):
+   Dikonfigurasi melalui tailwind.config.js yang menetapkan variabel warna resmi Apple, font stack San Francisco, skala tipografi, serta elevasi bayangan halus.
+
+---
+
+## 4. Modul-Modul Fungsional Sistem
+
+Sistem TripMate terdiri dari 8 modul utama:
+
+### Modul 1: Navigasi dan Pemantau Status (Navigation & Scroll Spy)
+- Komponen: header dan nav pada index.html.
+- Fungsi: Menyediakan akses instan ke seluruh bagian portal dengan efek frosted glass. Pada perangkat bergerak (mobile), menu secara otomatis bertransformasi menjadi navigasi horizontal berkapsul tanpa memotong ruang pandang.
+- Logika: script.js mendeteksi pergeseran koordinat vertikal jendela untuk memberikan efek elevasi serta memperbarui status tautan aktif (active state) secara real-time.
+
+### Modul 2: Pameran Utama (Hero Keynote Showcase)
+- Komponen: section id="home".
+- Fungsi: Menampilkan pernyataan nilai utama (value proposition) sistem dengan tipografi berskala besar dan visual fotografi sinematik resolusi tinggi.
+- Fitur Sistem: Menyajikan ringkasan metrik kredibilitas sistem (50+ Destinasi, 12.5k Wisatawan, 4.98 Rating Kepuasan, dan 24/7 Concierge).
+
+### Modul 3: Katalog Destinasi Wisata (Destination Catalog Engine)
+- Komponen: section id="destinasi".
+- Fungsi: Menampilkan kartu informasi destinasi dengan parameter terstruktur: nama wilayah, ulasan penilaian (rating), deskripsi pengalaman, estimasi harga mulai, dan tautan eksplorasi.
+
+### Modul 4: Mesin Keunggulan Bento Grid (Bento Value-Proposition Engine)
+- Komponen: section id="keunggulan".
+- Fungsi: Modul baru yang mengelompokkan 4 pilar sistem dalam tata letak kisi asimetris:
+  - Kurasi Kualitas Bintang Lima (Eksklusivitas).
+  - Pemesanan Cepat 60 Detik (Seamless Workflow).
+  - Transparansi Biaya 100% (No Hidden Fees).
+  - Pendampingan 24 Jam (24/7 Concierge Support).
+
+### Modul 5: Manajemen Paket dan Perbandingan Tingkatan (Package Tiering Engine)
+- Komponen: section id="paket".
+- Fungsi: Menampilkan tiga tingkatan paket wisata dengan struktur harga per orang dan rincian fasilitas. Paket Liburan Premium diposisikan sebagai tingkatan unggulan (Pro Tier) dengan aksen visual khusus.
+- Interaktivitas: Setiap tombol pemesanan terhubung ke logika JavaScript untuk memicu pengisian formulir secara otomatis.
+
+### Modul 6: Narasi Filosofi dan Penjaminan Mutu (Editorial & Trust System)
+- Komponen: section id="tentang".
+- Fungsi: Menyampaikan visi platform serta menyajikan tiga indikator mutu: 99.8% Kepuasan Pelanggan, 150+ Mitra Resort, dan 100% Garansi Proteksi Perjalanan.
+
+### Modul 7: Formulir Reservasi dan Saluran Bantuan (Customer Dispatch Subsystem)
+- Komponen: section id="kontak".
+- Fungsi: Menyediakan kanal komunikasi langsung (Email, WhatsApp, Respon Cepat) serta formulir pesan terstruktur dengan validasi input bawaan.
+
+### Modul 8: Notifikasi Dinamis (Dynamic Island Notification Subsystem)
+- Komponen: div id="appleToast" dan pengendali showToast() pada script.js.
+- Fungsi: Menghadirkan umpan balik taktil di bagian atas layar untuk mengonfirmasi tindakan penting (pemilihan paket tur atau keberhasilan pengiriman pesan).
+
+---
+
+## 5. Kontribusi dan Pembaruan Sistem oleh Shafi (NIM: 202410370110484)
+
+Shafi bertanggung jawab penuh atas perancangan ulang, refaktorisasi arsitektur, dan pengembangan fitur baru pada sistem TripMate:
+
+1. Migrasi Arsitektur ke Tailwind CSS:
+   - Mengubah struktur styling konvensional menjadi utility-first framework berbasis Tailwind v3.4.
+   - Menyusun konfigurasi tailwind.config.js dengan parameter desain Apple (warna Apple Blue #0071e3, radius squircle 24px dan 28px, serta font stack San Francisco).
+
+2. Pembangunan Modul Bento Grid (Fitur Baru):
+   - Merancang dan mengimplementasikan section keunggulan berbasis Bento Grid yang sebelumnya belum ada pada sistem awal.
+
+3. Pengembangan Logika Interaktif script.js (Fitur Baru):
+   - Menciptakan subsistem Dynamic Island Toast dengan animasi kurva pegas (spring easing).
+   - Membangun fitur auto-fill pesan paket wisata ke form reservasi.
+   - Mengimplementasikan pendeteksi navigasi aktif (Scroll Spy).
+   - Menghadirkan penanganan status pengiriman formulir dengan feedback waktu nyata.
+
+4. Desain Antarmuka Berstandar Apple:
+   - Menerapkan material frosted glass (apple-glass) pada header.
+   - Merestrukturisasi tata letak paket tur dengan pembedaan tingkatan standar vs pro.
+   - Mengoptimalkan tipografi Swiss-Apple yang bersih, fungsional, dan bebas dari ornamen non-esensial.
+
+5. Resolusi dan Integrasi Aset Gambar:
+   - Mengatasi permasalahan tautan gambar kosong pada sistem awal dengan mengintegrasikan berkas gambar resolusi tinggi untuk seluruh destinasi dan latar hero.
+
+---
+
+## 6. Spesifikasi Teknologi Sistem
+
+- Bahasa Markup: HTML5 Semantic
+- Bahasa Gaya: CSS3, Tailwind CSS v3.4.17
+- Bahasa Pemrograman Klien: Vanilla JavaScript (ECMAScript 2022+)
+- Build Tool: Tailwind CLI (dikompilasi melalui Node.js)
+- Font: Apple System Font (-apple-system, SF Pro Display, SF Pro Text), Plus Jakarta Sans
+
+---
+
+## 7. Struktur Berkas Sistem
 
 ```
 TripMate-main/
-│
-├── index.html            # Struktur markup HTML5 lengkap dengan utility classes Tailwind
-├── script.js             # Logika interaktif JavaScript buatan Shafi (Toast, Spy, Auto-fill)
-├── tailwind.config.js    # Konfigurasi token desain Apple (warna, radius, font, shadow)
-├── input.css             # Source CSS dengan direktif @tailwind dan utilitas apple-glass
-├── style.css             # Output CSS murni yang telah dikompilasi dan diminifikasi
-├── package.json          # Manajemen dependencies & skrip npm build/dev
-├── README.md             # Dokumentasi proyek dan atribusi Shafi (202410370110484)
-│
-└── images/               # Aset fotografi resolusi tinggi
-    ├── hero.jpg          # Background hero Apple Keynote
-    ├── bali.jpg          # Destinasi Bali
-    ├── yogyakarta.jpg    # Destinasi Yogyakarta
-    └── lombok.jpg         # Destinasi Lombok
+|-- index.html            Struktur dokumen HTML5 dengan utilitas Tailwind CSS
+|-- script.js             Logika fungsional dan interaktivitas sistem oleh Shafi
+|-- tailwind.config.js    Konfigurasi token desain Apple (warna, radius, tipografi)
+|-- input.css             Berkas sumber direktif Tailwind dan kelas utilitas kaca
+|-- style.css             Berkas CSS akhir hasil kompilasi Tailwind CLI
+|-- package.json          Konfigurasi dependensi dan perintah kompilasi sistem
+|-- README.md             Dokumentasi teknis sistem dan atribusi Shafi (202410370110484)
+`-- images/               Direktori aset visual resolusi tinggi
+    |-- hero.jpg          Latar belakang pameran utama
+    |-- bali.jpg          Visual destinasi Bali
+    |-- yogyakarta.jpg    Visual destinasi Yogyakarta
+    `-- lombok.jpg         Visual destinasi Lombok
 ```
 
 ---
 
-## ⚙️ Petunjuk Penggunaan & Pengembangan
+## 8. Panduan Menjalankan dan Membangun Sistem
 
-### 1. Menjalankan Website Secara Langsung
-Cukup buka berkas [`index.html`](index.html) langsung di peramban (browser) modern seperti Google Chrome, Safari, atau Microsoft Edge.
+### Menjalankan Sistem
+Buka berkas index.html langsung melalui peramban web modern (Google Chrome, Mozilla Firefox, Safari, atau Microsoft Edge).
 
-### 2. Menjalankan Mode Pengembangan Tailwind CSS (Opsional)
-Jika ingin melakukan pengeditan kelas atau menambah komponen baru:
+### Menjalankan Perintah Kompilasi Tailwind CSS
+Pastikan Node.js telah terpasang pada komputer:
 
 ```bash
-# Instalasi dependencies (hanya jika baru pertama kali)
+# Memasang dependensi
 npm install
 
-# Menjalankan pemantauan perubahan secara otomatis (Watch mode)
+# Menjalankan pemantauan berkas (mode pengembangan)
 npm run dev
 
-# Membangun file CSS final yang diminifikasi untuk produksi
+# Mengompilasi dan meminifikasi CSS untuk rilis produksi
 npm run build
 ```
 
 ---
 
-## 🏆 Catatan Hak Cipta & Orisinalitas
-
-- **Pengembang**: **Shafi**
-- **NIM**: **`202410370110484`**
-- **Tahun**: 2026
-- **Lisensi**: Edukasi & Portofolio Frontend Engineering
+Hak Cipta Sistem (c) 2026 TripMate. Dikembangkan oleh Shafi (NIM: 202410370110484).
