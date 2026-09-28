@@ -1,93 +1,249 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TripMate - Teman Perjalananmu</title>
+    <title>TripMate — Desain Eksplorasi Premium (Tailwind CSS)</title>
+    <meta name="description" content="Rencanakan dan nikmati liburan impianmu dengan kemudahan, estetika, dan kenyamanan kelas dunia bersama TripMate.">
+    <meta name="theme-color" content="#ffffff">
 
-    <!-- File CSS akan kamu buat sendiri -->
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Compiled Tailwind Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-[#fbfbfd] text-[#1d1d1f] font-sans antialiased selection:bg-blue-500/20 selection:text-[#0071e3] overflow-x-hidden">
 
-    <!-- Navbar -->
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#">TripMate</a>
+    <!-- Frosted Glass Navbar (Tailwind) -->
+    <header class="sticky top-0 z-50 w-full apple-glass border-b border-black/[0.06] transition-all">
+        <nav class="max-w-6xl mx-auto min-h-16 py-3 px-6 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
+            <!-- Brand Logo -->
+            <div class="w-full md:w-auto flex items-center justify-between">
+                <a href="#home" class="flex items-center gap-2.5 text-xl font-bold tracking-tight text-[#1d1d1f] group">
+                    <span class="w-9 h-9 rounded-xl bg-[#0071e3] text-white flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:rotate-12 transition-transform duration-300">
+                        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                        </svg>
+                    </span>
+                    <span>TripMate</span>
+                </a>
+                
+                <a href="#paket" class="inline-flex md:hidden items-center justify-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#0071e3] text-white shadow-sm">
+                    Pesan Paket
+                </a>
             </div>
 
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#destinasi">Destinasi</a></li>
-                <li><a href="#paket">Paket Wisata</a></li>
-                <li><a href="#tentang">Tentang Kami</a></li>
-                <li><a href="#kontak">Kontak</a></li>
+            <!-- Navigation Links -->
+            <ul class="flex items-center gap-1.5 md:gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 no-scrollbar justify-start md:justify-center">
+                <li><a href="#home" class="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-[#1d1d1f] bg-black/[0.04] whitespace-nowrap transition-colors">Home</a></li>
+                <li><a href="#destinasi" class="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-black/[0.04] whitespace-nowrap transition-colors">Destinasi</a></li>
+                <li><a href="#keunggulan" class="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-black/[0.04] whitespace-nowrap transition-colors">Keunggulan</a></li>
+                <li><a href="#paket" class="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-black/[0.04] whitespace-nowrap transition-colors">Paket Wisata</a></li>
+                <li><a href="#tentang" class="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-black/[0.04] whitespace-nowrap transition-colors">Tentang</a></li>
+                <li><a href="#kontak" class="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-black/[0.04] whitespace-nowrap transition-colors">Kontak</a></li>
             </ul>
+
+            <!-- Desktop Action CTA -->
+            <div class="hidden md:flex items-center">
+                <a href="#paket" class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-semibold bg-[#0071e3] text-white hover:bg-[#0077ed] active:bg-[#0062c4] transition-all shadow-md shadow-blue-500/20 hover:-translate-y-0.5">
+                    Pesan Paket
+                </a>
+            </div>
         </nav>
     </header>
 
 
-    <!-- Hero Section -->
     <main>
 
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Jelajahi Dunia Bersama TripMate</h1>
+        <!-- Apple Keynote Hero Section (Tailwind) -->
+        <section id="home" class="relative min-h-[85vh] flex items-center justify-center px-6 py-20 bg-[#0b0c10] overflow-hidden bg-cover bg-center" style="background-image: url('images/hero.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/65 to-black/85 backdrop-blur-[2px]"></div>
+            
+            <div class="relative z-10 max-w-4xl mx-auto text-center text-white flex flex-col items-center">
+                <!-- Eyebrow Pill -->
+                <div class="inline-flex items-center gap-2 apple-glass-pill border border-white/20 px-4 py-1.5 rounded-full text-xs font-semibold text-slate-100 mb-6 shadow-lg shadow-black/20">
+                    <span class="text-amber-300">✦</span>
+                    <span>Generasi Baru Pengalaman Berlibur</span>
+                </div>
 
-                <p>
-                    Temukan destinasi impian, rencanakan perjalanan,
-                    dan ciptakan pengalaman tak terlupakan bersama TripMate.
+                <!-- Hero Title -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-apple-tight leading-[1.08] mb-6 text-white drop-shadow-sm">
+                    Jelajahi Dunia Bersama TripMate.
+                </h1>
+
+                <!-- Hero Subtitle -->
+                <p class="text-base sm:text-xl text-white/85 max-w-2xl leading-relaxed mb-10 font-normal">
+                    Temukan destinasi impian, rencanakan perjalanan dengan presisi, dan ciptakan momen tak terlupakan dalam standar kenyamanan tertinggi.
                 </p>
 
-                <a href="#destinasi" class="btn">Mulai Eksplorasi</a>
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
+                    <a href="#destinasi" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold bg-[#0071e3] text-white hover:bg-[#0077ed] active:bg-[#0062c4] transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-0.5 group">
+                        Mulai Eksplorasi
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#paket" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md transition-all hover:-translate-y-0.5">
+                        Lihat Paket Pilihan
+                    </a>
+                </div>
+
+                <!-- Floating Metrics Pill -->
+                <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-6 sm:gap-10 apple-glass-pill border border-white/15 px-6 sm:px-10 py-4 rounded-3xl md:rounded-full shadow-2xl">
+                    <div class="flex flex-col items-center">
+                        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">50+</span>
+                        <span class="text-xs text-white/70 font-medium">Destinasi Kurasi</span>
+                    </div>
+                    <div class="hidden sm:block w-px h-8 bg-white/20"></div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">12.5k</span>
+                        <span class="text-xs text-white/70 font-medium">Traveler Bahagia</span>
+                    </div>
+                    <div class="hidden sm:block w-px h-8 bg-white/20"></div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">4.98</span>
+                        <span class="text-xs text-white/70 font-medium">Rating Kepuasan</span>
+                    </div>
+                    <div class="hidden sm:block w-px h-8 bg-white/20"></div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">24/7</span>
+                        <span class="text-xs text-white/70 font-medium">Concierge AI & Tim</span>
+                    </div>
+                </div>
             </div>
         </section>
 
 
-        <!-- Destinasi -->
-        <section id="destinasi" class="destinations">
-            <div class="section-title">
-                <h2>Destinasi Populer</h2>
-                <p>Beberapa tempat menarik yang bisa kamu kunjungi.</p>
+        <!-- Destinasi Populer (Tailwind Apple Cards) -->
+        <section id="destinasi" class="max-w-6xl mx-auto px-6 py-24">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Destinasi Pilihan</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-3">Koleksi Destinasi Populer</h2>
+                <p class="text-base text-[#6e6e73]">Tempat-tempat eksotis terverifikasi dengan pengalaman tak tertandingi.</p>
             </div>
 
-            <div class="destination-list">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <article class="destination-card">
-                    <img src="images/bali.jpg" alt="Pemandangan Bali">
-                    <div class="card-content">
-                        <h3>Bali</h3>
-                        <p>
-                            Nikmati pantai, budaya, kuliner, dan keindahan alam
-                            Pulau Dewata.
+                <!-- Bali Card -->
+                <article class="bg-white rounded-[24px] overflow-hidden flex flex-col border border-black/[0.06] shadow-apple-sm hover:shadow-apple-hover hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/bali.jpg" alt="Pemandangan Bali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">Favorit Wisatawan</span>
+                        <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md">
+                            <svg class="w-3.5 h-3.5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            4.95
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-1.5 text-xs text-[#86868b] font-medium mb-2">
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Bali, Indonesia
+                        </div>
+                        <h3 class="text-xl font-bold tracking-tight text-[#1d1d1f] mb-2">Pulau Dewata, Bali</h3>
+                        <p class="text-sm text-[#6e6e73] leading-relaxed mb-6 flex-1">
+                            Nikmati ketenangan pantai sunset, kehangatan budaya lokal, kuliner autentik, dan lanskap alam magis.
                         </p>
-                        <a href="#">Lihat Detail</a>
+                        <div class="flex items-center justify-between pt-4 border-t border-black/[0.06]">
+                            <div>
+                                <span class="block text-[11px] text-[#86868b]">Mulai dari</span>
+                                <span class="text-base font-bold text-[#0071e3]">Rp1.850.000</span>
+                            </div>
+                            <a href="#paket" class="inline-flex items-center gap-1 text-sm font-semibold text-[#0071e3] group/link hover:underline">
+                                Detail
+                                <svg class="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </article>
 
-                <article class="destination-card">
-                    <img src="images/yogyakarta.jpg" alt="Pemandangan Yogyakarta">
-                    <div class="card-content">
-                        <h3>Yogyakarta</h3>
-                        <p>
-                            Jelajahi kekayaan budaya, sejarah, kuliner,
-                            dan berbagai destinasi menarik.
+                <!-- Yogyakarta Card -->
+                <article class="bg-white rounded-[24px] overflow-hidden flex flex-col border border-black/[0.06] shadow-apple-sm hover:shadow-apple-hover hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/yogyakarta.jpg" alt="Pemandangan Yogyakarta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">Heritage & Seni</span>
+                        <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md">
+                            <svg class="w-3.5 h-3.5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            4.91
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-1.5 text-xs text-[#86868b] font-medium mb-2">
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            D.I. Yogyakarta
+                        </div>
+                        <h3 class="text-xl font-bold tracking-tight text-[#1d1d1f] mb-2">Yogyakarta Heritage</h3>
+                        <p class="text-sm text-[#6e6e73] leading-relaxed mb-6 flex-1">
+                            Jelajahi megahnya candi warisan dunia, sentuhan seni keraton, keramahan istimewa, dan ragam kuliner legendaris.
                         </p>
-                        <a href="#">Lihat Detail</a>
+                        <div class="flex items-center justify-between pt-4 border-t border-black/[0.06]">
+                            <div>
+                                <span class="block text-[11px] text-[#86868b]">Mulai dari</span>
+                                <span class="text-base font-bold text-[#0071e3]">Rp1.450.000</span>
+                            </div>
+                            <a href="#paket" class="inline-flex items-center gap-1 text-sm font-semibold text-[#0071e3] group/link hover:underline">
+                                Detail
+                                <svg class="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </article>
 
-                <article class="destination-card">
-                    <img src="images/lombok.jpg" alt="Pemandangan Lombok">
-                    <div class="card-content">
-                        <h3>Lombok</h3>
-                        <p>
-                            Temukan pantai eksotis, pegunungan, dan
-                            pemandangan alam yang menakjubkan.
+                <!-- Lombok Card -->
+                <article class="bg-white rounded-[24px] overflow-hidden flex flex-col border border-black/[0.06] shadow-apple-sm hover:shadow-apple-hover hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/lombok.jpg" alt="Pemandangan Lombok" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">Eksplorasi Alam</span>
+                        <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md">
+                            <svg class="w-3.5 h-3.5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            4.97
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-1.5 text-xs text-[#86868b] font-medium mb-2">
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Lombok, NTB
+                        </div>
+                        <h3 class="text-xl font-bold tracking-tight text-[#1d1d1f] mb-2">Lombok & Gili Island</h3>
+                        <p class="text-sm text-[#6e6e73] leading-relaxed mb-6 flex-1">
+                            Temukan air laut kristal toska, pasir putih memesona, dan kemegahan jalur pendakian Gunung Rinjani.
                         </p>
-                        <a href="#">Lihat Detail</a>
+                        <div class="flex items-center justify-between pt-4 border-t border-black/[0.06]">
+                            <div>
+                                <span class="block text-[11px] text-[#86868b]">Mulai dari</span>
+                                <span class="text-base font-bold text-[#0071e3]">Rp2.150.000</span>
+                            </div>
+                            <a href="#paket" class="inline-flex items-center gap-1 text-sm font-semibold text-[#0071e3] group/link hover:underline">
+                                Detail
+                                <svg class="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -95,166 +251,457 @@
         </section>
 
 
-        <!-- Paket Wisata -->
-        <section id="paket" class="packages">
-
-            <div class="section-title">
-                <h2>Paket Wisata</h2>
-                <p>Pilih paket perjalanan yang sesuai dengan kebutuhanmu.</p>
+        <!-- Apple Bento Grid: Keunggulan TripMate (Tailwind) -->
+        <section id="keunggulan" class="max-w-6xl mx-auto px-6 py-20">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Mengapa TripMate</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-3">Dirancang untuk Kenyamanan Penuh.</h2>
+                <p class="text-base text-[#6e6e73]">Setiap detail pengalaman berlibur telah disempurnakan demi kepuasanmu.</p>
             </div>
 
-            <div class="package-list">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Bento 1: Large Featured Dark Card -->
+                <div class="md:col-span-2 bg-gradient-to-br from-[#1c1c1e] to-[#121214] text-white rounded-[28px] p-8 sm:p-10 border border-white/10 shadow-apple-sm relative overflow-hidden flex flex-col justify-between hover:-translate-y-1 hover:shadow-apple-card transition-all duration-300 group">
+                    <div>
+                        <span class="inline-block bg-white/15 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">Eksklusivitas</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3 text-white">Kurasi Premium Tanpa Kompromi</h3>
+                        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-lg">
+                            Kami menginspeksi langsung setiap resor, armada transportasi, dan pemandu lokal untuk memastikan standar privasi, higienitas, dan kemewahan sejati.
+                        </p>
+                    </div>
+                    <div class="absolute right-6 -bottom-4 opacity-10 group-hover:opacity-20 group-hover:rotate-12 transition-all duration-500 pointer-events-none text-white">
+                        <svg class="w-32 h-32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                </div>
 
-                <article class="package-card">
-                    <h3>Liburan Hemat</h3>
-                    <p class="price">Rp1.500.000</p>
+                <!-- Bento 2: Fast Booking -->
+                <div class="bg-white text-[#1d1d1f] rounded-[28px] p-8 border border-black/[0.06] shadow-apple-sm flex flex-col justify-between hover:-translate-y-1 hover:shadow-apple-card transition-all duration-300">
+                    <div>
+                        <span class="inline-block bg-blue-50 text-[#0071e3] text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">Seamless</span>
+                        <h3 class="text-xl font-bold tracking-tight mb-2">Pemesanan Cepat 60 Detik</h3>
+                        <p class="text-sm text-[#6e6e73] leading-relaxed">Konfirmasi instan, tiket digital di genggaman, dan tanpa proses berbelit.</p>
+                    </div>
+                    <div class="mt-6 text-xl font-extrabold text-[#0071e3]">1-Click Booking</div>
+                </div>
 
-                    <ul>
-                        <li>3 Hari 2 Malam</li>
-                        <li>Hotel</li>
-                        <li>Transportasi</li>
-                        <li>Tour Guide</li>
+                <!-- Bento 3: Transparent Pricing -->
+                <div class="bg-white text-[#1d1d1f] rounded-[28px] p-8 border border-black/[0.06] shadow-apple-sm flex flex-col justify-between hover:-translate-y-1 hover:shadow-apple-card transition-all duration-300">
+                    <div>
+                        <span class="inline-block bg-blue-50 text-[#0071e3] text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">Transparan</span>
+                        <h3 class="text-xl font-bold tracking-tight mb-2">Harga Jujur, Nol Biaya Tersembunyi</h3>
+                        <p class="text-sm text-[#6e6e73] leading-relaxed">Apa yang kamu lihat adalah yang kamu bayar. Semua pajak dan layanan sudah terhitung rapi.</p>
+                    </div>
+                    <div class="mt-6 text-xl font-extrabold text-[#0071e3]">100% Clear</div>
+                </div>
+
+                <!-- Bento 4: 24/7 Concierge -->
+                <div class="md:col-span-2 bg-white text-[#1d1d1f] rounded-[28px] p-8 sm:p-10 border border-black/[0.06] shadow-apple-sm flex flex-col justify-between hover:-translate-y-1 hover:shadow-apple-card transition-all duration-300">
+                    <div>
+                        <span class="inline-block bg-blue-50 text-[#0071e3] text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">Concierge 24/7</span>
+                        <h3 class="text-2xl font-bold tracking-tight mb-2">Pendamping Perjalanan Selalu Ada</h3>
+                        <p class="text-sm sm:text-base text-[#6e6e73] leading-relaxed">
+                            Dari perubahan cuaca mendadak hingga rekomendasi restoran rahasia, asisten cerdas TripMate dan tim personal siap sedia mendampingi kapan pun kamu butuhkan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Paket Wisata (Tailwind Apple Pro Tiers) -->
+        <section id="paket" class="bg-[#f5f5f7] py-24 px-6 border-y border-black/[0.04]">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Pilihan Paket</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-3">Paket Wisata Terpilih</h2>
+                <p class="text-base text-[#6e6e73]">Fleksibilitas paket terbaik yang dapat disesuaikan dengan ritme liburanmu.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+
+                <!-- Starter Tier -->
+                <article class="bg-white rounded-[28px] p-8 sm:p-10 border border-black/[0.06] shadow-apple-sm flex flex-col hover:-translate-y-2 hover:shadow-apple-hover transition-all duration-300">
+                    <div class="mb-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] block mb-1">Starter</span>
+                        <h3 class="text-2xl font-bold tracking-tight text-[#1d1d1f] mb-2">Liburan Hemat</h3>
+                        <p class="text-xs text-[#6e6e73]">Pilihan ideal untuk akhir pekan santai dan pelancong cerdas.</p>
+                    </div>
+
+                    <div class="flex items-baseline gap-1 mb-8 pb-6 border-b border-black/[0.06]">
+                        <span class="text-lg font-bold text-[#1d1d1f]">Rp</span>
+                        <span class="text-4xl font-extrabold tracking-tight text-[#1d1d1f]">1.500.000</span>
+                        <span class="text-xs text-[#86868b]">/ orang</span>
+                    </div>
+
+                    <ul class="flex flex-col gap-3.5 mb-8 flex-1">
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Durasi 3 Hari 2 Malam
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Hotel Nyaman Bintang 3
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Transportasi Antar-Jemput
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Tour Guide Berpengalaman
+                        </li>
                     </ul>
 
-                    <a href="#" class="btn">Pilih Paket</a>
+                    <a href="#kontak" class="w-full text-center py-3.5 px-6 rounded-full text-sm font-semibold bg-black/[0.05] hover:bg-black/[0.08] text-[#1d1d1f] border border-black/[0.06] transition-colors">
+                        Pilih Paket
+                    </a>
                 </article>
 
 
-                <article class="package-card">
-                    <h3>Liburan Premium</h3>
-                    <p class="price">Rp3.500.000</p>
+                <!-- Featured Tier (Apple Pro Flagship Card) -->
+                <article class="bg-white rounded-[28px] p-8 sm:p-10 border-2 border-[#0071e3] shadow-apple-glow flex flex-col relative md:-translate-y-2 hover:-translate-y-3 transition-all duration-300">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#0071e3] text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md shadow-blue-500/30">
+                        Paling Populer
+                    </span>
 
-                    <ul>
-                        <li>5 Hari 4 Malam</li>
-                        <li>Hotel Premium</li>
-                        <li>Transportasi</li>
-                        <li>Tour Guide</li>
-                        <li>Wisata Eksklusif</li>
+                    <div class="mb-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] block mb-1">Pro Experience</span>
+                        <h3 class="text-2xl font-bold tracking-tight text-[#1d1d1f] mb-2">Liburan Premium</h3>
+                        <p class="text-xs text-[#6e6e73]">Kenyamanan menyeluruh dengan fasilitas istimewa dan akses privat.</p>
+                    </div>
+
+                    <div class="flex items-baseline gap-1 mb-8 pb-6 border-b border-black/[0.06]">
+                        <span class="text-lg font-bold text-[#1d1d1f]">Rp</span>
+                        <span class="text-4xl font-extrabold tracking-tight text-[#1d1d1f]">3.500.000</span>
+                        <span class="text-xs text-[#86868b]">/ orang</span>
+                    </div>
+
+                    <ul class="flex flex-col gap-3.5 mb-8 flex-1">
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Durasi 5 Hari 4 Malam
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Resor & Hotel Premium Bintang 5
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Transportasi Privat & Driver Eksekutif
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Akses Wisata Eksklusif & VIP Skip-line
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Fotografer Profesional & Dokumentasi
+                        </li>
                     </ul>
 
-                    <a href="#" class="btn">Pilih Paket</a>
+                    <a href="#kontak" class="w-full text-center py-3.5 px-6 rounded-full text-sm font-semibold bg-[#0071e3] hover:bg-[#0077ed] text-white shadow-lg shadow-blue-500/25 transition-all">
+                        Pilih Paket
+                    </a>
                 </article>
 
 
-                <article class="package-card">
-                    <h3>Adventure Trip</h3>
-                    <p class="price">Rp2.500.000</p>
+                <!-- Explorer Tier -->
+                <article class="bg-white rounded-[28px] p-8 sm:p-10 border border-black/[0.06] shadow-apple-sm flex flex-col hover:-translate-y-2 hover:shadow-apple-hover transition-all duration-300">
+                    <div class="mb-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] block mb-1">Explorer</span>
+                        <h3 class="text-2xl font-bold tracking-tight text-[#1d1d1f] mb-2">Adventure Trip</h3>
+                        <p class="text-xs text-[#6e6e73]">Tantangan alam bebas dengan perlengkapan lengkap berstandar aman.</p>
+                    </div>
 
-                    <ul>
-                        <li>4 Hari 3 Malam</li>
-                        <li>Camping</li>
-                        <li>Transportasi</li>
-                        <li>Perlengkapan Adventure</li>
-                        <li>Guide</li>
+                    <div class="flex items-baseline gap-1 mb-8 pb-6 border-b border-black/[0.06]">
+                        <span class="text-lg font-bold text-[#1d1d1f]">Rp</span>
+                        <span class="text-4xl font-extrabold tracking-tight text-[#1d1d1f]">2.500.000</span>
+                        <span class="text-xs text-[#86868b]">/ orang</span>
+                    </div>
+
+                    <ul class="flex flex-col gap-3.5 mb-8 flex-1">
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Durasi 4 Hari 3 Malam
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Glamping & Safari Camping
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Transportasi 4x4 Offroad
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#6e6e73]">
+                            <span class="w-5 h-5 rounded-full bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            Perlengkapan Adventure & Safety Guide
+                        </li>
                     </ul>
 
-                    <a href="#" class="btn">Pilih Paket</a>
+                    <a href="#kontak" class="w-full text-center py-3.5 px-6 rounded-full text-sm font-semibold bg-black/[0.05] hover:bg-black/[0.08] text-[#1d1d1f] border border-black/[0.06] transition-colors">
+                        Pilih Paket
+                    </a>
                 </article>
 
             </div>
         </section>
 
 
-        <!-- Tentang Kami -->
-        <section id="tentang" class="about">
-
-            <div class="section-title">
-                <h2>Tentang TripMate</h2>
+        <!-- Tentang Kami (Tailwind Apple Storytelling) -->
+        <section id="tentang" class="max-w-4xl mx-auto px-6 py-24 text-center">
+            <div class="mb-10">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Filosofi Kami</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">Tentang TripMate</h2>
             </div>
 
-            <div class="about-content">
-                <p>
-                    TripMate adalah platform travel yang membantu kamu menemukan
-                    berbagai destinasi wisata menarik dan merencanakan perjalanan
-                    dengan lebih mudah.
-                </p>
+            <p class="text-xl sm:text-2xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-snug">
+                “Setiap perjalanan bukan sekadar berpindah tempat, melainkan cara kita memperluas cakrawala jiwa.”
+            </p>
 
+            <div class="space-y-4 text-base sm:text-lg text-[#6e6e73] leading-relaxed max-w-3xl mx-auto mb-16">
                 <p>
-                    Kami percaya bahwa setiap perjalanan memiliki cerita.
-                    Karena itu, TripMate hadir untuk menjadi teman perjalananmu
-                    dari awal hingga akhir.
+                    TripMate lahir dari gagasan sederhana: membuat seni bepergian menjadi begitu anggun, tanpa beban, dan berkesan mendalam. Kami memadukan kurasi destinasi bernilai seni tinggi dengan dukungan operasional yang presisi.
+                </p>
+                <p>
+                    Bersama jaringan mitra hotel bintang lima, pemandu lokal bersertifikat, dan teknologi pemesanan modern, TripMate hadir sebagai pendamping setia sejak langkah pertama rencana hingga kembali ke rumah dengan kisah istimewa.
                 </p>
             </div>
 
+            <!-- Metric Pillars -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-[#f5f5f7] p-8 rounded-[20px] border border-black/[0.06] hover:bg-white hover:shadow-apple-sm transition-all">
+                    <div class="text-3xl font-extrabold text-[#0071e3] mb-1">99.8%</div>
+                    <div class="text-xs font-semibold text-[#6e6e73]">Indeks Kepuasan Pelanggan</div>
+                </div>
+                <div class="bg-[#f5f5f7] p-8 rounded-[20px] border border-black/[0.06] hover:bg-white hover:shadow-apple-sm transition-all">
+                    <div class="text-3xl font-extrabold text-[#0071e3] mb-1">150+</div>
+                    <div class="text-xs font-semibold text-[#6e6e73]">Mitra Hotel & Resort Teruji</div>
+                </div>
+                <div class="bg-[#f5f5f7] p-8 rounded-[20px] border border-black/[0.06] hover:bg-white hover:shadow-apple-sm transition-all">
+                    <div class="text-3xl font-extrabold text-[#0071e3] mb-1">100%</div>
+                    <div class="text-xs font-semibold text-[#6e6e73]">Garansi Perlindungan Perjalanan</div>
+                </div>
+            </div>
         </section>
 
 
-        <!-- Kontak -->
-        <section id="kontak" class="contact">
-
-            <div class="section-title">
-                <h2>Hubungi Kami</h2>
-                <p>Punya pertanyaan? Kirim pesan kepada tim TripMate.</p>
+        <!-- Kontak (Tailwind Apple Form & Info) -->
+        <section id="kontak" class="max-w-6xl mx-auto px-6 py-20">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#0071e3] mb-2 block">Dukungan 24/7</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-3">Hubungi Kami</h2>
+                <p class="text-base text-[#6e6e73]">Punya rencana khusus atau butuh konsultasi perjalanan? Kami siap membantu.</p>
             </div>
 
-            <form action="#" method="post">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Sidebar Cards -->
+                <div class="lg:col-span-5 flex flex-col gap-4">
+                    <div class="flex items-center gap-4 bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-apple-sm">
+                        <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-[#1d1d1f]">Email Konsultasi</h4>
+                            <p class="text-xs text-[#6e6e73]">halo@tripmate.com</p>
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="nama">Nama</label>
-                    <input
-                        type="text"
-                        id="nama"
-                        name="nama"
-                        placeholder="Masukkan nama kamu"
-                        required
-                    >
+                    <div class="flex items-center gap-4 bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-apple-sm">
+                        <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-[#1d1d1f]">Telepon / WhatsApp</h4>
+                            <p class="text-xs text-[#6e6e73]">+62 (021) 8089-7700</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-apple-sm">
+                        <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#0071e3] flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-[#1d1d1f]">Waktu Respon</h4>
+                            <p class="text-xs text-[#6e6e73]">Rata-rata dalam 5 menit</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Masukkan email kamu"
-                        required
-                    >
-                </div>
+                <!-- Form Container -->
+                <form action="#" method="post" class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-[28px] border border-black/[0.06] shadow-apple-card space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="space-y-1.5">
+                            <label for="nama" class="block text-xs font-bold text-[#1d1d1f]">Nama Lengkap</label>
+                            <input
+                                type="text"
+                                id="nama"
+                                name="nama"
+                                placeholder="e.g. Alexander Pratama"
+                                required
+                                class="w-full bg-[#f5f5f7] border border-black/[0.08] rounded-xl px-4 py-3 text-sm text-[#1d1d1f] focus:outline-none focus:bg-white focus:border-[#0071e3] focus:ring-4 focus:ring-blue-500/15 transition-all"
+                            >
+                        </div>
 
-                <div class="form-group">
-                    <label for="pesan">Pesan</label>
-                    <textarea
-                        id="pesan"
-                        name="pesan"
-                        rows="5"
-                        placeholder="Tulis pesan kamu..."
-                        required
-                    ></textarea>
-                </div>
+                        <div class="space-y-1.5">
+                            <label for="email" class="block text-xs font-bold text-[#1d1d1f]">Alamat Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="alexander@domain.com"
+                                required
+                                class="w-full bg-[#f5f5f7] border border-black/[0.08] rounded-xl px-4 py-3 text-sm text-[#1d1d1f] focus:outline-none focus:bg-white focus:border-[#0071e3] focus:ring-4 focus:ring-blue-500/15 transition-all"
+                            >
+                        </div>
+                    </div>
 
-                <button type="submit" class="btn">
-                    Kirim Pesan
-                </button>
+                    <div class="space-y-1.5">
+                        <label for="pesan" class="block text-xs font-bold text-[#1d1d1f]">Pesan atau Permintaan Khusus</label>
+                        <textarea
+                            id="pesan"
+                            name="pesan"
+                            rows="5"
+                            placeholder="Ceritakan rencana perjalanan impianmu atau pertanyaan yang ingin diajukan..."
+                            required
+                            class="w-full bg-[#f5f5f7] border border-black/[0.08] rounded-xl px-4 py-3 text-sm text-[#1d1d1f] focus:outline-none focus:bg-white focus:border-[#0071e3] focus:ring-4 focus:ring-blue-500/15 transition-all resize-y min-h-[120px]"
+                        ></textarea>
+                    </div>
 
-            </form>
-
+                    <button type="submit" class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full text-sm font-semibold bg-[#0071e3] text-white hover:bg-[#0077ed] active:bg-[#0062c4] transition-all shadow-lg shadow-blue-500/25">
+                        <span>Kirim Pesan</span>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
         </section>
 
     </main>
 
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">    
-            <h2>TripMate</h2>
+    <!-- Apple Style Minimalist Footer (Tailwind) -->
+    <footer class="bg-[#f5f5f7] border-t border-black/[0.06] pt-16 pb-12 text-[#6e6e73]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-black/[0.06]">
+                <div class="lg:col-span-5 space-y-4">
+                    <a href="#home" class="flex items-center gap-2.5 text-lg font-bold tracking-tight text-[#1d1d1f]">
+                        <span class="w-8 h-8 rounded-lg bg-[#0071e3] text-white flex items-center justify-center">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                            </svg>
+                        </span>
+                        <span>TripMate</span>
+                    </a>
+                    <p class="text-xs sm:text-sm text-[#86868b] max-w-sm leading-relaxed">
+                        Teman perjalanan premium untuk menjelajahi keindahan dunia dalam presisi dan kenyamanan.
+                    </p>
+                </div>
 
-            <p>
-                Teman perjalananmu untuk menjelajahi dunia.
-            </p>
+                <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-[#1d1d1f] mb-4">Destinasi</h4>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-[#6e6e73]">
+                            <li><a href="#destinasi" class="hover:text-[#0071e3] transition-colors">Bali</a></li>
+                            <li><a href="#destinasi" class="hover:text-[#0071e3] transition-colors">Yogyakarta</a></li>
+                            <li><a href="#destinasi" class="hover:text-[#0071e3] transition-colors">Lombok & Gili</a></li>
+                            <li><a href="#destinasi" class="hover:text-[#0071e3] transition-colors">Raja Ampat</a></li>
+                        </ul>
+                    </div>
 
-            <div class="social-media">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">TikTok</a>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-[#1d1d1f] mb-4">Paket Wisata</h4>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-[#6e6e73]">
+                            <li><a href="#paket" class="hover:text-[#0071e3] transition-colors">Liburan Hemat</a></li>
+                            <li><a href="#paket" class="hover:text-[#0071e3] transition-colors">Liburan Premium</a></li>
+                            <li><a href="#paket" class="hover:text-[#0071e3] transition-colors">Adventure Trip</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-[#1d1d1f] mb-4">Perusahaan</h4>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-[#6e6e73]">
+                            <li><a href="#tentang" class="hover:text-[#0071e3] transition-colors">Tentang TripMate</a></li>
+                            <li><a href="#keunggulan" class="hover:text-[#0071e3] transition-colors">Filosofi Desain</a></li>
+                            <li><a href="#kontak" class="hover:text-[#0071e3] transition-colors">Pusat Bantuan</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <p>
-                &copy; 2026 TripMate. All Rights Reserved.
-            </p>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#86868b]">
+                <p>&copy; 2026 TripMate Inc. Seluruh Hak Cipta Dilindungi Undang-Undang.</p>
+
+                <div class="flex items-center gap-5">
+                    <a href="#" class="hover:text-[#1d1d1f] transition-colors">Privasi</a>
+                    <a href="#" class="hover:text-[#1d1d1f] transition-colors">Ketentuan Layanan</a>
+                    <a href="#" class="hover:text-[#1d1d1f] transition-colors">Legalitas</a>
+                </div>
+            </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 
 </body>
 </html>
