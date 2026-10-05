@@ -165,4 +165,41 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 600);
         });
     }
+
+    
+    // ----------------------------------------------------------------
+    // 7. Destination API
+    // ----------------------------------------------------------------
+
+    const DESTINATION_API_URL =
+        'https://geocoding-api.open-meteo.com/v1/search' +
+        '?name=Yogyakarta' +
+        '&count=1' +
+        '&language=id' +
+        '&format=json' +
+        '&countryCode=ID';
+
+    const connectToDestinationAPI = async () => {
+        try {
+            const response = await fetch(DESTINATION_API_URL);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            console.log('TripMate — API berhasil terhubung.');
+            console.log('Data dari API:', data);
+
+            return data;
+
+        } catch (error) {
+            console.error('TripMate — Gagal terhubung ke API:', error);
+        }
+    };
+
+    connectToDestinationAPI();
+
+
 });
