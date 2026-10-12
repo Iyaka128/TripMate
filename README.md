@@ -157,66 +157,69 @@ npm run build
 
 ---
 
-## 8. گزارش رفع ایرادات و بهینه‌سازی‌ها (Troubleshooting & Fixes Report)
+## 8. Troubleshooting & System Fixes Report
 
-در بازبینی و تست پروژه، اشکالات زیر شناسایی و برطرف گردیدند:
+During system inspection and testing, the following issues were identified and resolved:
 
-### ۱. مشکل تصاویر مفقود (Missing Images & Broken Links)
-* **ایراد:** در فایل `index.html` به ۴ تصویر (`hero.jpg`, `bali.jpg`, `yogyakarta.jpg`, `lombok.jpg`) در مسیر `images/` ارجاع داده شده بود؛ اما پوشه `images` به کلی وجود نداشت و تصاویر در صفحه به صورت شکسته نمایش داده می‌شدند.
-* **اقدام و رفع:** 
-  - تصاویر باکیفیت آنلاین از CDN مطمئن Unsplash مستقیماً در `index.html` متصل شدند تا لود آنی و پرسرعت داشته باشند.
-  - برای هر تصویر هندلر خطای `onerror` اضافه شد تا در صورت بروز هرگونه قطعی شبکه، به نسخه محلی سوئیچ کند.
-  - پوشه فیزیکی `images/` ایجاد شد و هر ۴ تصویر برای استفاده آفلاین در آن ذخیره گردید.
+### 1. Missing Image Assets & Broken Links
+* **Issue:** `index.html` referenced 4 image files (`hero.jpg`, `bali.jpg`, `yogyakarta.jpg`, `lombok.jpg`) under the `images/` directory; however, the `images/` directory was missing from the repository archive, resulting in broken image icons across the interface.
+* **Resolution:**
+  - Integrated high-resolution CDN images directly from Unsplash into `index.html` for immediate, high-speed asset delivery.
+  - Added `onerror` fallback handlers to all `<img>` elements to gracefully fallback to local copies if offline.
+  - Created the local `images/` directory and downloaded all 4 image assets as offline backups.
 
-### ۲. فقدان پکیج‌های توسعه Tailwind CSS (`node_modules`)
-* **ایراد:** پکیج‌های وابسته پروژه نصب نبودند و امکان بیلد یا ادیت استایل‌های Tailwind با `npm run build` وجود نداشت.
-* **اقدام و رفع:** دستور `npm install` اجرا شد و تمامی وابستگی‌های Tailwind CSS (نسخه 3.4) نصب گردید. سپس با `npm run build`، فایل `style.css` با موفقیت کامپایل و فشرده‌سازی شد.
+### 2. Missing Tailwind CSS Build Dependencies (`node_modules`)
+* **Issue:** Node dependencies were not installed, preventing developers from building or watching Tailwind CSS via `npm run build`.
+* **Resolution:** Executed `npm install` to install Tailwind CSS v3.4 dependencies, created `package-lock.json`, and successfully compiled and minified `style.css`.
 
-### ۳. لینک‌های غیرفعال فوتر (Dead Links in Footer)
-* **ایراد:** لینک‌های بخش «حریم خصوصی» (Privasi) و «قوانین» (Ketentuan) در فوتر به `#` متصل بودند که هنگام کلیک باعث پرش ناگهانی صفحه به بالا می‌شد.
-* **اقدام و رفع:** در فایل `script.js` یک هندلر تعاملی اختصاصی اضافه شد که هنگام کلیک، از سیستم نوتیفیکیشن Dynamic Island برای اطلاع‌رسانی به کاربر استفاده می‌کند.
+### 3. Inactive Utility Links in Footer (Dead Links)
+* **Issue:** The "Privacy" (Privasi) and "Terms" (Ketentuan) footer links pointed to `href="#"`, causing abrupt page jumps to top on click.
+* **Resolution:** Added an event listener in `script.js` to intercept clicks and trigger tactile notifications using the Apple Dynamic Island toast notification system.
 
-### ۴. تست و اطمینان از سلامت عملکرد اسکریپت‌ها و API
-* **بررسی:** سلامت کدهای جاوااسکریپت و تابع اتصال به API مقصد (`Open-Meteo Geocoding API`) بررسی شد و بدون خطای سینتکسی یا اجرایی کار می‌کند.
+### 4. Client Script & API Health Verification
+* **Verification:** Validated JavaScript execution and the external `Open-Meteo Geocoding API` integration, ensuring zero syntax or runtime errors in the browser console.
 
 ---
 
-## 9. پیاده‌سازی کامل PHP رویه‌ای برای وب‌سایت TripMate (Week 5 — PHP Prosedural & SSR)
+## 9. Procedural PHP & Server-Side Rendering (SSR) Implementation (Week 5)
 
-طبق اصول درسی **Week 5 (PHP Prosedural & Server-Side Rendering)**، تمامی مفاهیم آموزشی PHP مستقیماً روی وب‌سایت اصلی **TripMate** در فایل [`index.php`](file:///c:/Users/shafi/Downloads/Compressed/TripMate-main/index.php) پیاده‌سازی و یکپارچه شدند:
+In accordance with **Week 5: Procedural PHP & Server-Side Rendering (SSR)** requirements, all procedural PHP concepts are directly integrated into the primary **TripMate** website in [`index.php`](index.php):
 
-### ساختار پیاده‌سازی شده در [`index.php`](file:///c:/Users/shafi/Downloads/Compressed/TripMate-main/index.php):
+### Architectural Structure in `index.php`:
 
-1. **بخش ۱: متغیرهای اصلی سیستم ([PHP Variables]):**
-   - متغیرهای اطلاعات پایه سایت نظیر `$siteName`، `$siteTagline`، `$siteDescription`، `$contactEmail`، `$contactPhone` و `$currentYear` در خطوط ۱۷ تا ۲۳ تعریف شدند.
-   - آرایه آمار کلیدی هیرو (`$heroMetrics`) شامل مقاصد، تعداد مسافران، امتیاز رضایت و پشتیبانی (خطوط ۲۵ تا ۳۱).
+1. **Section 1: Configuration Variables (`[PHP VARIABLES]`):**
+   - Defined core site metadata including `$siteName`, `$siteTagline`, `$siteDescription`, `$contactEmail`, `$contactPhone`, and `$currentYear` (lines 17–23).
+   - Structured hero metric indicators (`$heroMetrics`) for destinations, traveler count, satisfaction rating, and concierge support (lines 25–31).
 
-2. **بخش ۲: آرایه چندبعدی مقاصد گردشگری ([PHP Multidimensional Array]):**
-   - تعریف آرایه `$destinasiList` شامل کارت‌های بالی، یوگیاکارتا، و لومبوک با فیلدهای `nama`، `wilayah`، `deskripsi`، `harga`، `rating`، `kategori`، `status` و `gambar` (خطوط ۳۵ تا ۷۴).
+2. **Section 2: Destination Catalog (`[PHP MULTIDIMENSIONAL ARRAY]`):**
+   - Created the `$destinasiList` multidimensional array containing Bali, Yogyakarta, and Lombok with structured attributes: `nama`, `wilayah`, `deskripsi`, `harga`, `rating`, `kategori`, `status`, and `gambar` (lines 35–74).
 
-3. **بخش ۳: آرایه چندبعدی پکیج‌های گردشگری ([PHP Multidimensional Array]):**
-   - تعریف آرایه `$paketWisata` شامل سطوح Starter، Pro Experience، و Explorer به همراه فیلد پرچم شرطی `is_popular` و آرایه تودرتوی امکانات (`fasilitas`) (خطوط ۷۸ تا ۱۱۸).
+3. **Section 3: Tour Packages Catalog (`[PHP MULTIDIMENSIONAL ARRAY]`):**
+   - Created the `$paketWisata` multidimensional array representing Starter, Pro Experience, and Explorer tiers, featuring the boolean flag `is_popular` and a nested `fasilitas` array (lines 78–118).
 
-4. **بخش ۴: پردازش فرم سرورساید با متد POST ([PHP Backend Processing]):**
-   - بررسی درخواست با `$_SERVER['REQUEST_METHOD'] === 'POST'`، اعتبارسنجی و پاکسازی فیلدهای ارسالی (`htmlspecialchars`) و تولید پیام بازخورد سرورساید (`$pesanStatus`) در خطوط ۱۲۲ تا ۱۴۶.
+4. **Section 4: Server-Side Form Handling (`[PHP BACKEND PROCESSING]`):**
+   - Handles POST submissions (`$_SERVER['REQUEST_METHOD'] === 'POST'`), sanitizes input values (`htmlspecialchars`), and provides server-side feedback state (`$pesanStatus`) (lines 122–146).
 
-5. **بخش ۵: رندر داینامیک سرورساید (SSR) با منطق شرطی و شماره‌گذاری:**
-   - **رندر مقاصد (`#destinasi`):** رندر کارت‌ها با حلقه `foreach`، نشان وضعیت شرطی بر اساس فیلد `$dest['status']` (رنگ سبز برای «Tersedia» و نارنجی برای «Hampir Penuh»)، و شماره‌گذاری خودکار.
-   - **رندر پکیج‌ها (`#paket`):** تفکیک بصری خودکار کارت برتر (Pro Tier) از سایر کارت‌ها با شرط `if ($paket['is_popular'])`.
-   - **رندر فوتر:** داینامیک‌سازی لیست مقاصد و پکیج‌ها در فوتر بر اساس آرایه‌های PHP.
+5. **Section 5: Dynamic Server-Side Rendering (SSR) with Conditional Logic & Numbering:**
+   - **Destination Grid (`#destinasi`):** Iterates over `$destinasiList` using a `foreach` loop, applies conditional status badges based on availability (`Tersedia` = green, `Hampir Penuh` = amber), and auto-formats ratings and numbering.
+   - **Tour Packages Grid (`#paket`):** Automatically highlights the flagship Apple Pro tier using conditional logic (`if ($paket['is_popular'])`), applying distinct styling, borders, and badges.
+   - **Footer Navigation:** Dynamically renders destination and package link lists directly from PHP arrays.
 
-### راهنمای یافتن کامنت‌ها در کد [`index.php`](file:///c:/Users/shafi/Downloads/Compressed/TripMate-main/index.php):
-* **تعریف متغیرها و داده‌ها:** خطوط ۱ تا ۱۲۰ را بررسی کنید (کامنت‌های `[PHP VARIABLES]` و `[PHP MULTIDIMENSIONAL ARRAY]`).
-* **پردازش فرم POST:** خطوط ۱۲۲ تا ۱۴۶ (کامنت `[PHP BACKEND PROCESSING]`).
-* **رندر کارت‌های مقاصد:** خطوط ۲۴۰ تا ۳۱۰ (کامنت `[PHP SSR] KATALOG DESTINASI POPULER`).
-* **رندر پکیج‌های گردشگری:** خطوط ۳۷۰ تا ۴۵۰ (کامنت `[PHP SSR] PAKET WISATA DENGAN CONDITIONAL PRO TIER`).
+### Code Navigation & Comments in [`index.php`](index.php):
+* **Variable & Data Definitions:** Search for `[PHP VARIABLES]` and `[PHP MULTIDIMENSIONAL ARRAY]` (lines 1–120).
+* **POST Form Processing:** Search for `[PHP BACKEND PROCESSING]` (lines 122–146).
+* **Destination SSR Grid:** Search for `[PHP SSR] KATALOG DESTINASI POPULER` (lines 240–310).
+* **Package SSR Grid:** Search for `[PHP SSR] PAKET WISATA DENGAN CONDITIONAL PRO TIER` (lines 370–450).
 
-### نحوه اجرا:
-در خط فرمان پروژه دستور زیر را وارد نمایید:
+### How to Run:
+Run the built-in PHP development server in the project directory:
 ```bash
 php -S localhost:8000
 ```
-سپس آدرس `http://localhost:8000/index.php` را در مرورگر مشاهده کنید.
+Then navigate to:
+```text
+http://localhost:8000/index.php
+```
 
 ---
 
