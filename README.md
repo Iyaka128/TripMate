@@ -119,7 +119,8 @@ Pembaruan sistem mencakup perancangan ulang arsitektur, refaktorisasi antarmuka,
 
 ```
 TripMate-main/
-|-- index.html            Struktur dokumen HTML5 dengan utilitas Tailwind CSS
+|-- index.php             Implementasi PHP Prosedural & Server-Side Rendering (Week 5)
+|-- index.html            Struktur dokumen HTML5 dengan utilitas Tailwind CSS (Week 4)
 |-- script.js             Logika fungsional dan interaktivitas sistem
 |-- tailwind.config.js    Konfigurasi token desain Apple (warna, radius, tipografi)
 |-- input.css             Berkas sumber direktif Tailwind dan kelas utilitas kaca
@@ -153,6 +154,69 @@ npm run dev
 # Mengompilasi dan meminifikasi CSS untuk rilis produksi
 npm run build
 ```
+
+---
+
+## 8. گزارش رفع ایرادات و بهینه‌سازی‌ها (Troubleshooting & Fixes Report)
+
+در بازبینی و تست پروژه، اشکالات زیر شناسایی و برطرف گردیدند:
+
+### ۱. مشکل تصاویر مفقود (Missing Images & Broken Links)
+* **ایراد:** در فایل `index.html` به ۴ تصویر (`hero.jpg`, `bali.jpg`, `yogyakarta.jpg`, `lombok.jpg`) در مسیر `images/` ارجاع داده شده بود؛ اما پوشه `images` به کلی وجود نداشت و تصاویر در صفحه به صورت شکسته نمایش داده می‌شدند.
+* **اقدام و رفع:** 
+  - تصاویر باکیفیت آنلاین از CDN مطمئن Unsplash مستقیماً در `index.html` متصل شدند تا لود آنی و پرسرعت داشته باشند.
+  - برای هر تصویر هندلر خطای `onerror` اضافه شد تا در صورت بروز هرگونه قطعی شبکه، به نسخه محلی سوئیچ کند.
+  - پوشه فیزیکی `images/` ایجاد شد و هر ۴ تصویر برای استفاده آفلاین در آن ذخیره گردید.
+
+### ۲. فقدان پکیج‌های توسعه Tailwind CSS (`node_modules`)
+* **ایراد:** پکیج‌های وابسته پروژه نصب نبودند و امکان بیلد یا ادیت استایل‌های Tailwind با `npm run build` وجود نداشت.
+* **اقدام و رفع:** دستور `npm install` اجرا شد و تمامی وابستگی‌های Tailwind CSS (نسخه 3.4) نصب گردید. سپس با `npm run build`، فایل `style.css` با موفقیت کامپایل و فشرده‌سازی شد.
+
+### ۳. لینک‌های غیرفعال فوتر (Dead Links in Footer)
+* **ایراد:** لینک‌های بخش «حریم خصوصی» (Privasi) و «قوانین» (Ketentuan) در فوتر به `#` متصل بودند که هنگام کلیک باعث پرش ناگهانی صفحه به بالا می‌شد.
+* **اقدام و رفع:** در فایل `script.js` یک هندلر تعاملی اختصاصی اضافه شد که هنگام کلیک، از سیستم نوتیفیکیشن Dynamic Island برای اطلاع‌رسانی به کاربر استفاده می‌کند.
+
+### ۴. تست و اطمینان از سلامت عملکرد اسکریپت‌ها و API
+* **بررسی:** سلامت کدهای جاوااسکریپت و تابع اتصال به API مقصد (`Open-Meteo Geocoding API`) بررسی شد و بدون خطای سینتکسی یا اجرایی کار می‌کند.
+
+---
+
+## 9. پیاده‌سازی کامل PHP رویه‌ای برای وب‌سایت TripMate (Week 5 — PHP Prosedural & SSR)
+
+طبق اصول درسی **Week 5 (PHP Prosedural & Server-Side Rendering)**، تمامی مفاهیم آموزشی PHP مستقیماً روی وب‌سایت اصلی **TripMate** در فایل [`index.php`](file:///c:/Users/shafi/Downloads/Compressed/TripMate-main/index.php) پیاده‌سازی و یکپارچه شدند:
+
+### ساختار پیاده‌سازی شده در [`index.php`](file:///c:/Users/shafi/Downloads/Compressed/TripMate-main/index.php):
+
+1. **بخش ۱: متغیرهای اصلی سیستم ([PHP Variables]):**
+   - متغیرهای اطلاعات پایه سایت نظیر `$siteName`، `$siteTagline`، `$siteDescription`، `$contactEmail`، `$contactPhone` و `$currentYear` در خطوط ۱۷ تا ۲۳ تعریف شدند.
+   - آرایه آمار کلیدی هیرو (`$heroMetrics`) شامل مقاصد، تعداد مسافران، امتیاز رضایت و پشتیبانی (خطوط ۲۵ تا ۳۱).
+
+2. **بخش ۲: آرایه چندبعدی مقاصد گردشگری ([PHP Multidimensional Array]):**
+   - تعریف آرایه `$destinasiList` شامل کارت‌های بالی، یوگیاکارتا، و لومبوک با فیلدهای `nama`، `wilayah`، `deskripsi`، `harga`، `rating`، `kategori`، `status` و `gambar` (خطوط ۳۵ تا ۷۴).
+
+3. **بخش ۳: آرایه چندبعدی پکیج‌های گردشگری ([PHP Multidimensional Array]):**
+   - تعریف آرایه `$paketWisata` شامل سطوح Starter، Pro Experience، و Explorer به همراه فیلد پرچم شرطی `is_popular` و آرایه تودرتوی امکانات (`fasilitas`) (خطوط ۷۸ تا ۱۱۸).
+
+4. **بخش ۴: پردازش فرم سرورساید با متد POST ([PHP Backend Processing]):**
+   - بررسی درخواست با `$_SERVER['REQUEST_METHOD'] === 'POST'`، اعتبارسنجی و پاکسازی فیلدهای ارسالی (`htmlspecialchars`) و تولید پیام بازخورد سرورساید (`$pesanStatus`) در خطوط ۱۲۲ تا ۱۴۶.
+
+5. **بخش ۵: رندر داینامیک سرورساید (SSR) با منطق شرطی و شماره‌گذاری:**
+   - **رندر مقاصد (`#destinasi`):** رندر کارت‌ها با حلقه `foreach`، نشان وضعیت شرطی بر اساس فیلد `$dest['status']` (رنگ سبز برای «Tersedia» و نارنجی برای «Hampir Penuh»)، و شماره‌گذاری خودکار.
+   - **رندر پکیج‌ها (`#paket`):** تفکیک بصری خودکار کارت برتر (Pro Tier) از سایر کارت‌ها با شرط `if ($paket['is_popular'])`.
+   - **رندر فوتر:** داینامیک‌سازی لیست مقاصد و پکیج‌ها در فوتر بر اساس آرایه‌های PHP.
+
+### راهنمای یافتن کامنت‌ها در کد [`index.php`](file:///c:/Users/shafi/Downloads/Compressed/TripMate-main/index.php):
+* **تعریف متغیرها و داده‌ها:** خطوط ۱ تا ۱۲۰ را بررسی کنید (کامنت‌های `[PHP VARIABLES]` و `[PHP MULTIDIMENSIONAL ARRAY]`).
+* **پردازش فرم POST:** خطوط ۱۲۲ تا ۱۴۶ (کامنت `[PHP BACKEND PROCESSING]`).
+* **رندر کارت‌های مقاصد:** خطوط ۲۴۰ تا ۳۱۰ (کامنت `[PHP SSR] KATALOG DESTINASI POPULER`).
+* **رندر پکیج‌های گردشگری:** خطوط ۳۷۰ تا ۴۵۰ (کامنت `[PHP SSR] PAKET WISATA DENGAN CONDITIONAL PRO TIER`).
+
+### نحوه اجرا:
+در خط فرمان پروژه دستور زیر را وارد نمایید:
+```bash
+php -S localhost:8000
+```
+سپس آدرس `http://localhost:8000/index.php` را در مرورگر مشاهده کنید.
 
 ---
 

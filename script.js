@@ -199,7 +199,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    connectToDestinationAPI();
-
+    // ----------------------------------------------------------------
+    // 8. Footer Quick Actions (Privacy, Terms)
+    // ----------------------------------------------------------------
+    const footerEmptyLinks = document.querySelectorAll('footer a[href="#"]');
+    footerEmptyLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const label = link.textContent.trim();
+            showToast(`Dokumen ${label} sedang dalam proses pembaruan berkala.`, label, 'info');
+        });
+    });
 
 });
