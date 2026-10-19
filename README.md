@@ -223,4 +223,64 @@ http://localhost:8000/index.php
 
 ---
 
+<<<<<<< HEAD
 Hak Cipta Sistem (c) 2026 TripMate. Seluruh Hak Cipta Dilindungi Undang-Undang.
+=======
+Hak Cipta Sistem (c) 2026 TripMate. Seluruh Hak Cipta Dilindungi Undang-Undang.
+
+---
+
+## 9. Struktur MVC (Week 6–7)
+
+Proyek ini mempertahankan tampilan TripMate yang sudah ada, sambil memisahkan tanggung jawab kode menjadi Model, View, dan Controller.
+
+```text
+TripMate/
+├── index.php
+├── models/
+│   └── Destination.php
+├── controllers/
+│   └── DestinationController.php
+├── views/
+│   └── home.php
+├── index.html
+├── script.js
+├── style.css
+└── input.css
+```
+
+- **Model — `models/Destination.php`**: class `Destination`, constructor, property `private`, getter, `getProfile()`, `toArray()`, dan sumber data destinasi melalui `Destination::all()`.
+- **Controller — `controllers/DestinationController.php`**: menyiapkan konfigurasi dan data untuk View, memproses request `POST` formulir, memvalidasi email, lalu memanggil View.
+- **View — `views/home.php`**: HTML dan presentasi. Tampilan menggunakan data yang disiapkan Controller.
+- **Front Controller — `index.php`**: titik masuk aplikasi yang memanggil Controller.
+
+### Alur MVC
+
+```text
+Browser request
+    ↓
+index.php
+    ↓
+DestinationController
+    ↓
+Destination model (object)
+    ↓
+Controller menyiapkan data
+    ↓
+views/home.php
+    ↓
+HTML TripMate di browser
+```
+
+### Menjalankan aplikasi MVC
+
+Jalankan dari folder proyek:
+
+```bash
+php -S localhost:8000
+```
+
+Kemudian buka `http://localhost:8000/index.php`. **Gunakan `index.php`, bukan `index.html`**, agar PHP dan alur MVC dieksekusi oleh server. `index.html` dipertahankan sebagai versi frontend statis.
+
+Form kontak dikirim menggunakan HTTP `POST` ke Controller. Server memvalidasi nama, email, dan pesan, lalu View menampilkan status hasil pemrosesan.
+>>>>>>> d8cfd8b (MVC)

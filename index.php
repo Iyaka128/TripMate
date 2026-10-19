@@ -1,5 +1,6 @@
 <?php
 /**
+<<<<<<< HEAD
  * ====================================================================
  * TripMate — Portal Wisata Eksplorasi Premium
  * File: index.php (PHP Prosedural & Server-Side Rendering)
@@ -667,3 +668,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </body>
 </html>
+=======
+ * TripMate — Front Controller.
+ * Alur MVC: Request -> Controller -> Model -> Controller -> View.
+ */
+require __DIR__ . '/controllers/DestinationController.php';
+>>>>>>> d8cfd8b (MVC)

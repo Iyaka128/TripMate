@@ -139,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('#kontak form');
 
     if (contactForm) {
+<<<<<<< HEAD
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -166,6 +167,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+=======
+        contactForm.addEventListener('submit', () => {
+            // Biarkan browser mengirim POST ke index.php agar Controller memproses form.
+            // Tidak memakai preventDefault() atau simulasi setTimeout lagi.
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.textContent = 'Mengirim Pesan...';
+                submitButton.setAttribute('aria-busy', 'true');
+            }
+        });
+    }
+
+    // Jika Controller mengembalikan status form, tampilkan juga melalui toast.
+    const serverFormNotice = document.querySelector('[data-form-status]');
+    if (serverFormNotice) {
+        const noticeTitle = serverFormNotice.dataset.title || 'Notifikasi';
+        const noticeType = serverFormNotice.dataset.formStatus === 'success' ? 'success' : 'info';
+        const noticeMessage = serverFormNotice.dataset.message || serverFormNotice.textContent.trim();
+        showToast(noticeMessage, noticeTitle, noticeType);
+    }
+
+>>>>>>> d8cfd8b (MVC)
     
     // ----------------------------------------------------------------
     // 7. Destination API
