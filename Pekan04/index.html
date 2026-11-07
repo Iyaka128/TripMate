@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TripMate — Pekan 4: Fetch API</title><link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<header><div class="container nav"><a class="brand" href="#">Trip<span>Mate</span></a><nav><a href="#pencarian">Cari Kota</a><a href="#hasil">Hasil API</a></nav></div></header>
+<section class="hero"><div class="container"><span class="eyebrow">PEKAN 4 · REST API & FETCH</span><h1>Kenali kota<br>tujuan liburanmu.</h1><p>TripMate mengambil informasi lokasi dari layanan Geocoding Open-Meteo. Data diterima dalam format JSON lalu ditampilkan secara dinamis.</p></div></section>
+<main class="container">
+<section class="section" id="pencarian">
+  <div class="section-head"><h2>Pencarian Lokasi</h2><p class="muted">Cari kota tujuan di Indonesia, misalnya Bali, Yogyakarta, atau Lombok.</p></div>
+  <form id="searchForm" class="panel">
+    <label for="cityInput">Nama kota / destinasi</label>
+    <input id="cityInput" name="city" value="Yogyakarta" placeholder="Masukkan nama kota" required>
+    <button class="btn" id="searchButton" type="submit" style="margin-top:14px">Cari lokasi</button>
+    <div id="status" class="notice" role="status" aria-live="polite">Siap mencari data lokasi dari API.</div>
+  </form>
+</section>
+<section class="section" id="hasil">
+  <div class="section-head"><h2>Hasil dari API</h2><p class="muted">Hasil pencarian akan muncul di bawah ini.</p></div>
+  <div id="results" class="grid"><div class="empty">Belum ada pencarian. Silakan cari kota terlebih dahulu.</div></div>
+</section>
+</main>
+<footer><div class="container">Sumber API: Open-Meteo Geocoding API · Implementasi Pekan 4</div></footer>
+</body></html>
