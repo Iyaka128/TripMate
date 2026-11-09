@@ -139,35 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('#kontak form');
 
     if (contactForm) {
-<<<<<<< HEAD
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalContent = submitButton ? submitButton.innerHTML : 'Kirim Pesan';
-
-            if (submitButton) {
-                submitButton.disabled = true;
-                submitButton.textContent = 'Mengirim Pesan...';
-            }
-
-            // Simulate network turnaround
-            setTimeout(() => {
-                const nameInput = document.getElementById('nama');
-                const senderName = nameInput && nameInput.value ? nameInput.value.trim() : 'Traveler';
-
-                contactForm.reset();
-
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalContent;
-                }
-
-                showToast(`Terima kasih, ${senderName}. Pesan kamu telah berhasil terkirim.`, 'Pesan Terkirim', 'success');
-            }, 600);
-        });
-    }
-
-=======
         contactForm.addEventListener('submit', () => {
             // Biarkan browser mengirim POST ke index.php agar Controller memproses form.
             // Tidak memakai preventDefault() atau simulasi setTimeout lagi.
@@ -188,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast(noticeMessage, noticeTitle, noticeType);
     }
 
->>>>>>> d8cfd8b (MVC)
     
     // ----------------------------------------------------------------
     // 7. Destination API

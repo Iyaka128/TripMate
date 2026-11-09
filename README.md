@@ -223,9 +223,6 @@ http://localhost:8000/index.php
 
 ---
 
-<<<<<<< HEAD
-Hak Cipta Sistem (c) 2026 TripMate. Seluruh Hak Cipta Dilindungi Undang-Undang.
-=======
 Hak Cipta Sistem (c) 2026 TripMate. Seluruh Hak Cipta Dilindungi Undang-Undang.
 
 ---
@@ -283,4 +280,3 @@ php -S localhost:8000
 Kemudian buka `http://localhost:8000/index.php`. **Gunakan `index.php`, bukan `index.html`**, agar PHP dan alur MVC dieksekusi oleh server. `index.html` dipertahankan sebagai versi frontend statis.
 
 Form kontak dikirim menggunakan HTTP `POST` ke Controller. Server memvalidasi nama, email, dan pesan, lalu View menampilkan status hasil pemrosesan.
->>>>>>> d8cfd8b (MVC)
