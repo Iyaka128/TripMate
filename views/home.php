@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Compiled Tailwind Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body class="bg-[#fbfbfd] text-[#1d1d1f] font-sans antialiased selection:bg-blue-500/20 selection:text-[#0071e3] overflow-x-hidden">
@@ -513,7 +513,7 @@
     </footer>
 
     <!-- Apple Interactive Script -->
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 
 </body>
 </html>
