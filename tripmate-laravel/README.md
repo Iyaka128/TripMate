@@ -16,6 +16,8 @@ Ekstensi PHP yang diaktifkan di `php.ini`: `openssl`, `mbstring`, `fileinfo`, `c
 
 Laravel Boost (`laravel/boost`) dipasang sebagai dependency dev.
 
+Asset frontend lama (`style.css` hasil compile Tailwind dan `script.js`) dipindahkan ke `public/` dan dipanggil dari Blade lewat `{{ asset('...') }}`.
+
 ## 2. Setting Database (`.env`)
 
 Koneksi database dikonfigurasi di file `.env`:
@@ -93,10 +95,22 @@ Berada di `database/seeders/`:
 
 ## 9. Menjalankan Aplikasi
 
+Dari clone repository (vendor tidak ikut ter-commit):
+
 ```bash
-php artisan migrate:fresh --seed   # siapkan database + data awal
+composer install                      # install dependency (vendor/)
+cp .env.example .env                  # buat file .env
+php artisan key:generate              # isi APP_KEY
+```
+
+Buat file database kosong `database/database.sqlite`, lalu:
+
+```bash
+php artisan migrate:fresh --seed   # buat tabel + isi data awal
 php artisan serve                  # jalankan server di http://localhost:8000
 ```
+
+Form kontak mengirim POST ke `/kontak` — pesan tersimpan di tabel `messages` (cek dengan `php artisan tinker` → `App\Models\Message::all()`).
 
 ---
 

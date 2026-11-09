@@ -280,3 +280,29 @@ php -S localhost:8000
 Kemudian buka `http://localhost:8000/index.php`. **Gunakan `index.php`, bukan `index.html`**, agar PHP dan alur MVC dieksekusi oleh server. `index.html` dipertahankan sebagai versi frontend statis.
 
 Form kontak dikirim menggunakan HTTP `POST` ke Controller. Server memvalidasi nama, email, dan pesan, lalu View menampilkan status hasil pemrosesan.
+
+---
+
+## 10. Versi Laravel (Week 9 — Laravel CRUD + ORM)
+
+TripMate telah dipindahkan ke **Laravel 13** di folder [`tripmate-laravel/`](tripmate-laravel/):
+
+- Database **SQLite** (`.env` → `DB_CONNECTION=sqlite`, file `database/database.sqlite`)
+- **Migration** untuk 3 tabel: `destinations`, `packages`, `messages`
+- **Model Eloquent**: `Destination`, `Package`, `Message` (ORM — `Model::all()`, `Model::create()`)
+- **Controller**: `DestinationController@index`, `MessageController@store`
+- **View Blade**: `resources/views/home.blade.php`
+- **Route**: `GET /` (index) dan `POST /kontak` (simpan pesan ke database)
+- **Seeder**: data 3 destinasi + 3 paket wisata
+
+Menjalankan versi Laravel:
+
+```bash
+cd tripmate-laravel
+composer install
+cp .env.example .env && php artisan key:generate
+php artisan migrate:fresh --seed
+php artisan serve
+```
+
+Dokumentasi lengkap: [`tripmate-laravel/README.md`](tripmate-laravel/README.md)
