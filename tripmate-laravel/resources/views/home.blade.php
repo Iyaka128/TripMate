@@ -40,6 +40,25 @@
                 <a href="#paket" class="inline-flex md:hidden items-center justify-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#0071e3] text-white shadow-sm">
                     Pesan Paket
                 </a>
+                
+                <!--- Placeholder Task 1 --->
+                <a href="{{ route('admin.destinations.index') }}"
+                style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 8px 16px;
+                border-radius: 999px;
+                background-color: #0071e3;
+                color: white;
+                font-size: 12px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: background-color 0.2s;
+                ">
+                Kelola Destinasi
+               </a>
+
             </div>
 
             <!-- Navigation Links -->

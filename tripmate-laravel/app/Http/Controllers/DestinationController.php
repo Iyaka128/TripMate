@@ -9,8 +9,7 @@ use Illuminate\Http\Request;
 class DestinationController extends Controller
 {
     /**
-     * Tampilkan halaman utama TripMate.
-     * Data destinasi & paket diambil dari database via ORM (Eloquent).
+     * Menampilkan halaman utama TripMate.
      */
     public function index()
     {
@@ -42,5 +41,91 @@ class DestinationController extends Controller
             'destinasiList',
             'paketWisata'
         ));
+    }
+
+    /**
+     * Menampilkan daftar destinasi untuk pengelolaan.
+     */
+    public function manageIndex()
+    {
+        $destinations = Destination::all();
+
+        return view('destinations.index', compact('destinations'));
+    }
+
+    /**
+     * Menampilkan form tambah destinasi.
+     */
+    public function create()
+    {
+        return view('destinations.create');
+    }
+
+    /**
+     * Menyimpan destinasi baru.
+     */
+    public function store(Request $request)
+    {
+        $data = $request->only([
+            'nama',
+            'wilayah',
+            'deskripsi',
+            'harga',
+            'rating',
+            'kategori',
+            'status',
+            'gambar',
+            'gambar_alt',
+        ]);
+
+        Destination::create($data);
+
+        return redirect()
+            ->route('admin.destinations.index')
+            ->with('success', 'Destinasi berhasil ditambahkan.');
+    }
+
+    /**
+     * Menampilkan form edit destinasi.
+     */
+    public function edit(Destination $destination)
+    {
+        return view('destinations.edit', compact('destination'));
+    }
+
+    /**
+     * Memperbarui data destinasi.
+     */
+    public function update(Request $request, Destination $destination)
+    {
+        $data = $request->only([
+            'nama',
+            'wilayah',
+            'deskripsi',
+            'harga',
+            'rating',
+            'kategori',
+            'status',
+            'gambar',
+            'gambar_alt',
+        ]);
+
+        $destination->update($data);
+
+        return redirect()
+            ->route('admin.destinations.index')
+            ->with('success', 'Destinasi berhasil diperbarui.');
+    }
+
+    /**
+     * Menghapus destinasi.
+     */
+    public function destroy(Destination $destination)
+    {
+        $destination->delete();
+
+        return redirect()
+            ->route('admin.destinations.index')
+            ->with('success', 'Destinasi berhasil dihapus.');
     }
 }
