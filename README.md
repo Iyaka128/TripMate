@@ -477,11 +477,3 @@ php artisan route:list
 ```
 
 **Hasil Week 10:** TripMate telah memiliki fitur CRUD destinasi berbasis Controller, validasi input, dan RESTful API untuk pengelolaan data destinasi.
-
----
-
-Hak Cipta Sistem (c) 2026 TripMate. Seluruh Hak Cipta Dilindungi Undang-Undang.
-
----
-
-Hak Cipta Sistem (c) 2026 TripMate. Seluruh Hak Cipta Dilindungi Undang-Undang.
