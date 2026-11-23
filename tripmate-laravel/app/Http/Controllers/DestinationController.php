@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Destination;
 use App\Models\Package;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class DestinationController extends Controller
 {
-    /**
-     * Menampilkan halaman utama TripMate.
-     */
     public function index()
     {
         $siteName = 'TripMate';
@@ -43,9 +41,6 @@ class DestinationController extends Controller
         ));
     }
 
-    /**
-     * Menampilkan daftar destinasi untuk pengelolaan.
-     */
     public function manageIndex()
     {
         $destinations = Destination::all();
@@ -53,73 +48,59 @@ class DestinationController extends Controller
         return view('destinations.index', compact('destinations'));
     }
 
-    /**
-     * Menampilkan form tambah destinasi.
-     */
     public function create()
     {
         return view('destinations.create');
     }
 
     /**
-     * Menyimpan destinasi baru.
+     * Aturan validasi untuk form destinasi.
+     * Status mengikuti pilihan yang sudah digunakan TripMate.
      */
+    private function destinationRules(): array
+    {
+        return [
+            'nama' => ['required', 'string', 'max:100'],
+            'wilayah' => ['required', 'string', 'max:150'],
+            'deskripsi' => ['required', 'string'],
+            'harga' => ['required', 'string', 'max:255'],
+            'rating' => ['nullable', 'numeric', 'between:0,5'],
+            'kategori' => ['required', 'string', 'max:100'],
+            'status' => ['required', Rule::in(['Tersedia', 'Hampir Penuh'])],
+            'gambar' => ['required', 'url', 'max:2048'],
+            'gambar_alt' => ['nullable', 'string', 'max:255'],
+        ];
+    }
+
     public function store(Request $request)
     {
-        $data = $request->only([
-            'nama',
-            'wilayah',
-            'deskripsi',
-            'harga',
-            'rating',
-            'kategori',
-            'status',
-            'gambar',
-            'gambar_alt',
-        ]);
+        $validated = $request->validate($this->destinationRules());
+        $validated['rating'] = $validated['rating'] ?? 0;
 
-        Destination::create($data);
+        Destination::create($validated);
 
         return redirect()
             ->route('admin.destinations.index')
             ->with('success', 'Destinasi berhasil ditambahkan.');
     }
 
-    /**
-     * Menampilkan form edit destinasi.
-     */
     public function edit(Destination $destination)
     {
         return view('destinations.edit', compact('destination'));
     }
 
-    /**
-     * Memperbarui data destinasi.
-     */
     public function update(Request $request, Destination $destination)
     {
-        $data = $request->only([
-            'nama',
-            'wilayah',
-            'deskripsi',
-            'harga',
-            'rating',
-            'kategori',
-            'status',
-            'gambar',
-            'gambar_alt',
-        ]);
+        $validated = $request->validate($this->destinationRules());
+        $validated['rating'] = $validated['rating'] ?? 0;
 
-        $destination->update($data);
+        $destination->update($validated);
 
         return redirect()
             ->route('admin.destinations.index')
             ->with('success', 'Destinasi berhasil diperbarui.');
     }
 
-    /**
-     * Menghapus destinasi.
-     */
     public function destroy(Destination $destination)
     {
         $destination->delete();
