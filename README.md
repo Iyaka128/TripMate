@@ -307,6 +307,8 @@ php artisan serve
 
 Dokumentasi lengkap: [`tripmate-laravel/README.md`](tripmate-laravel/README.md)
 
+---
+
 # TripMate — Week 10 (Controller, Routing, Validation & REST API)
 
 Pada Week 10, pengembangan TripMate difokuskan pada pengelolaan data destinasi menggunakan Controller, penerapan Request Validation, serta pembuatan RESTful API menggunakan Laravel 13.
@@ -358,20 +360,127 @@ Respons API menggunakan JSON dengan HTTP status code seperti `200`, `201`, `404`
 
 Dokumentasi API tersedia pada `API_DOCUMENTATION.md`.
 
-## 4. Menjalankan dan Menguji
+## 4. Instalasi dan Menjalankan Project
 
-Jalankan aplikasi menggunakan:
+### A. Persyaratan
+
+Pastikan perangkat sudah memiliki:
+- PHP 8.3 atau lebih baru.
+- Composer.
+- Git.
+- VS Code (disarankan).
+
+Pastikan ekstensi PHP berikut aktif pada `php.ini`:
+- `openssl`
+- `mbstring`
+- `fileinfo`
+- `curl`
+- `pdo_sqlite`
+- `sqlite3`
+
+### B. Clone Repository
+
+Buka terminal VS Code, kemudian jalankan:
+
+```bash
+git clone https://github.com/Iyaka128/TripMate.git
+```
+
+Masuk ke folder Laravel:
+
+```bash
+cd TripMate/tripmate-laravel
+```
+
+### C. Install Dependency
+
+Jalankan Composer untuk mengunduh seluruh dependency Laravel:
+
+```bash
+composer install
+```
+
+### D. Konfigurasi Environment
+
+Buat file `.env` berdasarkan `.env.example`.
+
+Untuk Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Kemudian buat application key:
+
+```bash
+php artisan key:generate
+```
+
+**Catatan:** File `.env` tidak disimpan di GitHub karena berisi konfigurasi lokal dan application key. Setiap anggota yang melakukan clone harus membuat file tersebut sendiri.
+
+### E. Konfigurasi Database SQLite
+
+Pastikan konfigurasi database pada `.env` menggunakan:
+
+```env
+DB_CONNECTION=sqlite
+```
+
+Pastikan file database tersedia di:
+
+```text
+database/database.sqlite
+```
+
+Jika file belum tersedia, buat melalui PowerShell:
+
+```powershell
+New-Item database/database.sqlite -ItemType File
+```
+
+### F. Migration dan Seeder
+
+Buat tabel database sekaligus mengisi data awal:
+
+```bash
+php artisan migrate --seed
+```
+
+Migration membuat tabel yang diperlukan, sedangkan Seeder memasukkan data awal destinasi dan paket wisata.
+
+### G. Jalankan Aplikasi
+
+Setelah seluruh konfigurasi selesai, jalankan:
 
 ```bash
 php artisan serve
 ```
 
+Buka browser dan akses:
+
+**http://127.0.0.1:8000**
+
+Aplikasi TripMate sekarang dapat digunakan secara lokal.
+
+## 5. Pengujian Aplikasi
+
 Pengujian dilakukan melalui:
+
 - Halaman `/admin/destinations` untuk menguji CRUD.
 - Form Create dan Update untuk menguji validasi.
 - Endpoint `/api/destinations` untuk menguji RESTful API menggunakan browser atau Postman.
 
+Untuk memeriksa seluruh route yang tersedia:
+
+```bash
+php artisan route:list
+```
+
 **Hasil Week 10:** TripMate telah memiliki fitur CRUD destinasi berbasis Controller, validasi input, dan RESTful API untuk pengelolaan data destinasi.
+
+---
+
+Hak Cipta Sistem (c) 2026 TripMate. Seluruh Hak Cipta Dilindungi Undang-Undang.
 
 ---
 
